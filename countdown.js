@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const countdown = document.getElementById("countdown");
 
-  console.log(countdown, config);
   const endTime = new Date(config.regStart);
 
   function count() {
