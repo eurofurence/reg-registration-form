@@ -1,0 +1,130 @@
+{
+  "defaultLanguage": "en",
+  "availableLanguages": {
+    "en": "English",
+    "de": "Deutsch"
+  },
+  "availableCountries": [
+    { "en": "Germany", "de": "Deutschland" },
+    { "en": "France", "de": "Frankreich" },
+    { "en": "Great Britain", "de": "Großbritannien" }
+  ],
+  "birthdayLimits": {
+    "youngest": "2019-01-01",
+    "oldest": "1900-01-01"
+  },
+  "regStart": "2019-06-03T16:00:00+02:00",
+  "apiEndpoint": "http://example.com/registration/new",
+  "flags": [
+    {
+      "code": "anon",
+      "default": true,
+      "en": {
+        "label": "Legal Name is confidential",
+        "description": "Some description for that"
+      },
+      "de": {
+        "label": "Realname is geheim",
+        "description": "Irgendeine Beschreibung"
+      }
+    },
+    {
+      "code": "ev",
+      "default": false,
+      "en": {
+        "label": "Member of Eurofurence e.V.",
+        "description": "Testing an unchecked checkbox"
+      },
+      "de": {
+        "label": "Mitglied des Eurofurence e.V.",
+        "description": "Diesmal ungechecked"
+      }
+    }
+  ],
+  "tiers": [
+    {
+      "en": {
+        "label": "Early Bird",
+        "description": "until 1st of May, 5€"
+      },
+      "de": {
+        "label": "Frühbucher",
+        "description": "bis 1. Mai, 5€"
+      }
+    },
+    {
+      "en": {
+        "label": "Regular",
+        "description": "50€"
+      },
+      "de": {
+        "label": "Normal",
+        "description": "50€"
+      }
+    }
+  ],
+  "packages": [
+    {
+      "code": "sponsor",
+      "default": true,
+      "price": "10€",
+      "en": {
+        "label": "Sponsor Upgrade",
+        "description": "Support the Convention!"
+      },
+      "de": {
+        "label": "Sponsor Upgrade",
+        "description": "Unterstütze die Convention!"
+      }
+    },
+    {
+      "code": "sponsor2",
+      "default": false,
+      "price": "10.01€",
+      "en": {
+        "label": "Supersponsor Upgrade",
+        "description": "Support the Convention even more!"
+      },
+      "de": {
+        "label": "Supersponsor Upgrade",
+        "description": "Unterstütze die Convention noch mehr!"
+      }
+    }
+  ],
+  "packageExclusivity": [["sponsor", "sponsor2"]],
+  "options": [
+    {
+      "code": "art",
+      "default": true,
+      "en": {
+        "label": "Artist",
+        "description": "Are you an artist?"
+      },
+      "de": {
+        "label": "Künstler",
+        "description": "Bist du ein Künstler?"
+      }
+    },
+    {
+      "code": "suit",
+      "default": false,
+      "en": {
+        "label": "Fursuiter",
+        "description": "Cute and Fluffy"
+      },
+      "de": {
+        "label": "Fursuiter",
+        "description": "Süß und Flauschig"
+      }
+    }
+  ],
+  "tShirt": [
+    { "code": "S", "en": "Small", "de": "Klein" },
+    { "code": "M", "en": "Medium", "de": "Mittel" },
+    { "code": "L", "en": "Large", "de": "Groß" },
+    { "code": "XL", "en": "Extra Large", "de": "Extra Groß" }
+  ],
+  "imprint": "http://example.com/imprint.html",
+  "privacy": "http://example.com/privacy.html",
+  "partnerVisible": false
+}
