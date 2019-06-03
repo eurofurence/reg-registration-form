@@ -441,5 +441,5 @@
   ],
   "imprint": "http://example.com/imprint.html",
   "privacy": "http://example.com/privacy.html",
-  "partnerVisible": false
+  "partnerVisible": true
 }

@@ -125,7 +125,12 @@
       <div>
         <label>
           <span data-content="GENDER"></span>
-          <select data-field="gender"></select>
+          <select data-field="gender">
+            <option data-content="MALE" value="male"></option>
+            <option data-content="FEMALE" value="female"></option>
+            <option data-content="OTHER" value="other"></option>
+            <option data-content="DONT_SAY" value="notprovided"></option>
+          </select>
         </label>
         <button class="help-toggle-button">?</button>
         <p class="helptext" data-content="GENDER_HELP"></p>
