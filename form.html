@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="translate.js"></script>
+    <script src="form.js"></script>
+  </head>
+  <body>
+    <noscript>
+      You need to enable Javascript in order to use this site!
+    </noscript>
+    <h1 data-content="HEADER_FORM"></h1>
+    <fieldset>
+      <legend data-content="NAME_ADDRESS"></legend>
+      <div>
+        <label>
+          <span data-content="NICKNAME"></span>
+          <input data-field="nickname" placeholder="BlackCheetah" />
+        </label>
+        <button class="help-toggle-button">?</button>
+        <p class="helptext" data-content="NICKNAME_HELP"></p>
+      </div>
+      <div>
+        <label>
+          <span data-content="FIRST_NAME"></span>
+          <input data-field="first_name" placeholder="Hans" />
+        </label>
+        <button class="help-toggle-button">?</button>
+        <p class="helptext" data-content="FIRST_NAME_HELP"></p>
+      </div>
+      <div>
+        <label>
+          <span data-content="LAST_NAME"></span>
+          <input data-field="last_name" placeholder="Mustermann" />
+        </label>
+        <button class="help-toggle-button">?</button>
+        <p class="helptext" data-content="LAST_NAME_HELP"></p>
+      </div>
+      <div>
+        <label>
+          <span data-content="STREET"></span>
+          <input data-field="street" placeholder="Teststraße 24" />
+        </label>
+        <button class="help-toggle-button">?</button>
+        <p class="helptext" data-content="STREET_HELP"></p>
+      </div>
+      <div>
+        <label>
+          <span data-content="ZIP"></span>
+          <input data-field="zip" placeholder="12345" />
+        </label>
+        <button class="help-toggle-button">?</button>
+        <p class="helptext" data-content="ZIP_HELP"></p>
+      </div>
+      <div>
+        <label>
+          <span data-content="CITY"></span>
+          <input data-field="city" placeholder="Berlin" />
+        </label>
+        <button class="help-toggle-button">?</button>
+        <p class="helptext" data-content="CITY_HELP"></p>
+      </div>
+      <div>
+        <label>
+          <span data-content="COUNTRY"></span>
+          <select data-field="country"> </select>
+        </label>
+        <button class="help-toggle-button">?</button>
+        <p class="helptext" data-content="COUNTRY_HELP"></p>
+      </div>
+      <div>
+        <label>
+          <span data-content="COUNTRY_BADGE"></span>
+          <select data-field="country_badge"> </select>
+        </label>
+        <button class="help-toggle-button">?</button>
+        <p class="helptext" data-content="COUNTRY_BADGE_HELP"></p>
+      </div>
+      <div>
+        <label>
+          <span data-content="STATE"></span>
+          <input data-field="state" placeholder="Sachsen" />
+        </label>
+        <button class="help-toggle-button">?</button>
+        <p class="helptext" data-content="STATE_HELP"></p>
+      </div>
+      <div>
+        <label>
+          <span data-content="EMAIL"></span>
+          <input
+            data-field="email"
+            placeholder="jsquirrel_github_9a6d@packetloss.de"
+          />
+        </label>
+        <button class="help-toggle-button">?</button>
+        <p class="helptext" data-content="EMAIL_HELP"></p>
+      </div>
+      <div>
+        <label>
+          <span data-content="EMAIL_REPEAT"></span>
+          <input
+            data-field="email_repeat"
+            placeholder="jsquirrel_github_9a6d@packetloss.de"
+          />
+        </label>
+      </div>
+      <div>
+        <label>
+          <span data-content="PHONE"></span>
+          <input data-field="phone" placeholder="+49-2151-123456" />
+        </label>
+        <button class="help-toggle-button">?</button>
+        <p class="helptext" data-content="PHONE_HELP"></p>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend data-content="PERSONAL_INFORMATION"></legend>
+      <div>
+        <label>
+          <span data-content="BIRTHDAY"></span>
+          <input data-field="birthday" placeholder="1998-11-23" />
+        </label>
+        <button class="help-toggle-button">?</button>
+        <p class="helptext" data-content="BIRTHDAY_HELP"></p>
+      </div>
+      <div>
+        <label>
+          <span data-content="GENDER"></span>
+          <select data-field="gender"></select>
+        </label>
+        <button class="help-toggle-button">?</button>
+        <p class="helptext" data-content="GENDER_HELP"></p>
+      </div>
+      <div id="flags"></div>
+      <div id="partner">
+        <label>
+          <span data-content="PARTNER"></span>
+          <input data-field="partner"></input>
+        </label>
+        <button class="help-toggle-button">?</button>
+        <p class="helptext" data-content="PARTNER_HELP"></p>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend data-content="MEMBERSHIP_PACKAGES"></legend>
+      <div id="packages"></div>
+    </fieldset>
+    <div data-snippet="form-info-text"></div>
+    <fieldset>
+      <legend data-content="OPTIONAL_INFORMATION"></legend>
+      <div>
+        <label>
+          <span data-content="TSHIRT_SIZE"></span>
+          <select data-field="tshirt_size"> </select>
+        </label>
+        <button class="help-toggle-button">?</button>
+        <p class="helptext" data-content="TSHIRT_SIZE_HELP"></p>
+      </div>
+      <div id="options"></div>
+      <div>
+        <label>
+          <span data-content="USER_COMMENTS"></span>
+          <textarea data-field="user_comments"></textarea>
+        </label>
+        <button class="help-toggle-button">?</button>
+        <p class="helptext" data-content="USER_COMMENTS_HELP"></p>
+      </div>
+    </fieldset>
+  </body>
+</html>
