@@ -360,21 +360,21 @@
     {
       "en": {
         "label": "Early Bird",
-        "description": "until 1st of May, 5€"
+        "description": "until 1st of May"
       },
       "de": {
         "label": "Frühbucher",
-        "description": "bis 1. Mai, 5€"
+        "description": "bis 1. Mai"
       }
     },
     {
       "en": {
         "label": "Regular",
-        "description": "50€"
+        "description": "after 1st of May"
       },
       "de": {
         "label": "Normal",
-        "description": "50€"
+        "description": "nach 1. Mai"
       }
     }
   ],
@@ -382,7 +382,7 @@
     {
       "code": "sponsor",
       "default": true,
-      "price": "10€",
+      "price": ["10€", "15€"],
       "en": {
         "label": "Sponsor Upgrade",
         "description": "Support the Convention!"
@@ -395,7 +395,7 @@
     {
       "code": "sponsor2",
       "default": false,
-      "price": "10.01€",
+      "price": ["10.01€", "15.05€"],
       "en": {
         "label": "Supersponsor Upgrade",
         "description": "Support the Convention even more!"

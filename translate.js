@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", async () => {
+  const configResponse = await fetch("./config.json");
+  const config = await configResponse.json();
+
   const langCode = navigator.userLanguage || navigator.language;
-  const lang = langCode.substr(0, 2);
+  let lang = langCode.substr(0, 2);
+  if (!Object.keys(config.availableLanguages).includes(lang)) {
+    lang = config.defaultLanguage;
+  }
 
   const textsResponse = await fetch("lang/" + lang + ".json");
   const texts = await textsResponse.json();
