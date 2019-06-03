@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupPartner(config.partnerVisible);
   setupOptions("flags", config.flags, lang);
   setupOptions("options", config.options, lang);
+  setupPackages(config.tiers, config.packages, lang);
 });
 
 function setupCountries(countries, lang) {
@@ -70,7 +71,7 @@ function setupOptions(selector, options, lang) {
     const entry = document.createElement("div");
     entry.innerHTML = `<label>
       <span>${option[lang].label}</span>
-      <input type="checkbox" data-field="${option.code}"${
+      <input type="checkbox" data-field="${selector}:${option.code}"${
       option.default ? " checked" : ""
     }></input>
     </label>
@@ -80,4 +81,47 @@ function setupOptions(selector, options, lang) {
 
     container.appendChild(entry);
   });
+}
+
+function setupPackages(tiers, packages, lang) {
+  const container = document.getElementById("packages");
+  const table = document.createElement("table");
+
+  // head
+  const head = document.createElement("thead");
+  head.innerHTML = `<tr>
+    <th></th>
+    ${tiers
+      .map(
+        tier => `<th>
+        <b>${tier[lang].label}</b>
+        <i>${tier[lang].description}</i>
+      </th>`
+      )
+      .join("")}
+  </tr>`;
+  table.appendChild(head);
+
+  // body
+  const body = document.createElement("tbody");
+  body.innerHTML = packages
+    .map(
+      package => `<tr>
+    <td>
+      <label>
+      <input type="checkbox" data-field="package:${package.code}"${
+        package.default ? " checked" : ""
+      }></input>
+      <span>${package[lang].label}</span>
+      </label>
+      <button class="help-toggle-button">?</button>
+      <p class="helptext">${package[lang].description}</p>
+    </td>
+    ${package.price.map(price => `<td>${price}</td>`).join("")}
+  </tr>`
+    )
+    .join("");
+  table.appendChild(body);
+
+  container.appendChild(table);
 }
