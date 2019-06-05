@@ -5,6 +5,25 @@ document.addEventListener("click", evt => {
   }
 });
 
+document.addEventListener("change", evt => {
+  const field = evt.target.getAttribute("data-field");
+  if (field) {
+    if (isValid(field, evt.target.value)) {
+      evt.target.classList.remove("invalid");
+    } else {
+      evt.target.classList.add("invalid");
+    }
+  }
+});
+
+document.addEventListener("input", evt => {
+  if (evt.target.classList.contains("invalid")) {
+    if (isValid(evt.target.getAttribute("data-field"), evt.target.value)) {
+      evt.target.classList.remove("invalid");
+    }
+  }
+});
+
 document.addEventListener("DOMContentLoaded", async () => {
   const configResponse = await fetch("./config.json");
   const config = await configResponse.json();
@@ -124,4 +143,33 @@ function setupPackages(tiers, packages, lang) {
   table.appendChild(body);
 
   container.appendChild(table);
+}
+
+function isValid(element, value) {
+  switch (element) {
+    case "nickname":
+      return (
+        value.length >= 2 &&
+        value.length <= 80 &&
+        RegExp(
+          "^([A-Za-z]+[^A-Za-z]?[A-Za-z]+[^A-Za-z]?[A-Za-z]*|[^A-Za-z]?[A-Za-z]+[^A-Za-z]?[A-Za-z]+|[^A-Za-z]?[A-Za-z][A-Za-z]+[^A-Za-z]?|[^A-Za-z]{1,2}[A-Za-z][A-Za-z]+|[A-Za-z]+[^A-Za-z]{1,2}[A-Za-z]+|[A-Za-z][A-Za-z]+[^A-Za-z]{1,2})$"
+        ).test(value)
+      );
+    case "first_name":
+    case "last_name":
+    case "city":
+      return value.length >= 1 && value.length <= 80;
+    case "street":
+      return value.length >= 1 && value.length <= 120;
+    case "zip":
+      return value.length >= 1 && value.length <= 20;
+    case "state":
+      return value.length >= 0 && value.length <= 80;
+    case "email":
+      return value.length >= 1 && value.length <= 200;
+    case "phone":
+      return value.length >= 1 && value.length <= 32;
+  }
+
+  return true;
 }
