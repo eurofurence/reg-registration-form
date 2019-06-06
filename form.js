@@ -5,17 +5,6 @@ document.addEventListener("click", evt => {
   }
 });
 
-document.addEventListener("change", evt => {
-  const field = evt.target.getAttribute("data-field");
-  if (field) {
-    if (isValid(field, evt.target.value)) {
-      evt.target.classList.remove("invalid");
-    } else {
-      evt.target.classList.add("invalid");
-    }
-  }
-});
-
 document.addEventListener("input", evt => {
   if (evt.target.classList.contains("invalid")) {
     if (isValid(evt.target.getAttribute("data-field"), evt.target.value)) {
@@ -27,6 +16,35 @@ document.addEventListener("input", evt => {
 document.addEventListener("DOMContentLoaded", async () => {
   const configResponse = await fetch("./config.json");
   const config = await configResponse.json();
+
+  document.addEventListener("change", evt => {
+    const field = evt.target.getAttribute("data-field");
+    if (field) {
+      if (isValid(field, evt.target.value)) {
+        evt.target.classList.remove("invalid");
+      } else {
+        evt.target.classList.add("invalid");
+      }
+
+      const subfields = field.split(":");
+      if (subfields[0] === "package") {
+        const value = subfields[1];
+        if (evt.target.checked) {
+          config.packageExclusivity.forEach(exclusives => {
+            if (exclusives.includes(value)) {
+              exclusives.forEach(excludedPackage => {
+                if (excludedPackage !== value) {
+                  document.querySelector(
+                    '[data-field="package:' + excludedPackage + '"]'
+                  ).checked = false;
+                }
+              });
+            }
+          });
+        }
+      }
+    }
+  });
 
   const langCode = navigator.userLanguage || navigator.language;
   let lang = langCode.substr(0, 2);
