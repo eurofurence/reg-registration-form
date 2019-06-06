@@ -11,6 +11,7 @@ document.addEventListener("input", evt => {
       evt.target.classList.remove("invalid");
     }
   }
+  storeForm();
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -24,6 +25,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         evt.target.classList.remove("invalid");
       } else {
         evt.target.classList.add("invalid");
+      }
+
+      if (field === "country") {
+        document.querySelector('[data-field="country_badge"]').value =
+          evt.target.value;
       }
 
       const subfields = field.split(":");
@@ -43,6 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           });
         }
       }
+      storeForm();
     }
   });
 
@@ -169,9 +176,9 @@ function isValid(element, value) {
       return (
         value.length >= 2 &&
         value.length <= 80 &&
-        RegExp(
-          "^([A-Za-z]+[^A-Za-z]?[A-Za-z]+[^A-Za-z]?[A-Za-z]*|[^A-Za-z]?[A-Za-z]+[^A-Za-z]?[A-Za-z]+|[^A-Za-z]?[A-Za-z][A-Za-z]+[^A-Za-z]?|[^A-Za-z]{1,2}[A-Za-z][A-Za-z]+|[A-Za-z]+[^A-Za-z]{1,2}[A-Za-z]+|[A-Za-z][A-Za-z]+[^A-Za-z]{1,2})$"
-        ).test(value)
+        /^([A-Za-z]+[^A-Za-z]?[A-Za-z]+[^A-Za-z]?[A-Za-z]*|[^A-Za-z]?[A-Za-z]+[^A-Za-z]?[A-Za-z]+|[^A-Za-z]?[A-Za-z][A-Za-z]+[^A-Za-z]?|[^A-Za-z]{1,2}[A-Za-z][A-Za-z]+|[A-Za-z]+[^A-Za-z]{1,2}[A-Za-z]+|[A-Za-z][A-Za-z]+[^A-Za-z]{1,2})$/.test(
+          value
+        )
       );
     case "first_name":
     case "last_name":
@@ -187,7 +194,22 @@ function isValid(element, value) {
       return value.length >= 1 && value.length <= 200;
     case "phone":
       return value.length >= 1 && value.length <= 32;
+    case "birthday":
+      return /^\d{4}-([0]\d|1[0-2])-([0-2]\d|3[01])$/.test(value);
   }
 
   return true;
+}
+
+function storeForm() {
+  var elements = document.querySelectorAll("[data-field]");
+  var data = {};
+  for (var i = 0; i < elements.length; i++) {
+    if (elements[i].getAttribute("type") === "checkbox") {
+      data[elements[i].getAttribute("data-field")] = elements[i].checked;
+    } else {
+      data[elements[i].getAttribute("data-field")] = elements[i].value;
+    }
+  }
+  localStorage.setItem("regFormData", JSON.stringify(data));
 }
