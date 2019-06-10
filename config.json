@@ -325,8 +325,8 @@
     "ZW": { "en": "Zimbabwe", "de": "Simbabwe" }
   },
   "birthdayLimits": {
-    "youngest": "2019-01-01",
-    "oldest": "1900-01-01"
+    "youngest": "2001-01-01",
+    "oldest": "1950-01-01"
   },
   "regStart": "2019-06-03T16:00:00+02:00",
   "apiEndpoint": "http://example.com/registration/new",

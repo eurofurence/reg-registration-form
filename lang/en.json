@@ -8,5 +8,6 @@
   "HEADER_FORM": "Registration Form",
   "NAME_ADDRESS": "Name & Address",
   "NICKNAME": "Nickname",
-  "NICKNAME_HELP": "This is your nickname or \"fan name\". It will be printed on your name badge, and it will double as your login name. This field is mandatory, which means it must be filled in. Your nickname will end up on your name badge in HUGE letters, and it is usually the name people are going to address you with. If you don't have one, simply put in your first name, or anything else you would like to be adressed with. To avoid ascii art or other unpronounceable nicknames, there is now a rule that your nickname must at least contain two letters and may not contain more than two non-alphabetical symbols."
+  "NICKNAME_HELP": "This is your nickname or \"fan name\". It will be printed on your name badge, and it will double as your login name. This field is mandatory, which means it must be filled in. Your nickname will end up on your name badge in HUGE letters, and it is usually the name people are going to address you with. If you don't have one, simply put in your first name, or anything else you would like to be adressed with. To avoid ascii art or other unpronounceable nicknames, there is now a rule that your nickname must at least contain two letters and may not contain more than two non-alphabetical symbols.",
+  "GOTO_SUMMARY": "See Summary"
 }

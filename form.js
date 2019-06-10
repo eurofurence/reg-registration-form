@@ -65,6 +65,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupOptions("flags", config.flags, lang);
   setupOptions("options", config.options, lang);
   setupPackages(config.tiers, config.packages, lang);
+  setupBirthday(config.birthdayLimits);
+
+  restoreForm();
 });
 
 function setupCountries(countries, lang) {
@@ -170,6 +173,12 @@ function setupPackages(tiers, packages, lang) {
   container.appendChild(table);
 }
 
+function setupBirthday(limits) {
+  const element = document.querySelector('[data-field="birthday"]');
+  element.setAttribute("min", limits.oldest);
+  element.setAttribute("max", limits.youngest);
+}
+
 function isValid(element, value) {
   switch (element) {
     case "nickname":
@@ -192,6 +201,8 @@ function isValid(element, value) {
       return value.length >= 0 && value.length <= 80;
     case "email":
       return value.length >= 1 && value.length <= 200;
+    case "email_repeat":
+      return value === document.querySelector('[data-field="email"]').value;
     case "phone":
       return value.length >= 1 && value.length <= 32;
     case "birthday":
@@ -202,9 +213,9 @@ function isValid(element, value) {
 }
 
 function storeForm() {
-  var elements = document.querySelectorAll("[data-field]");
-  var data = {};
-  for (var i = 0; i < elements.length; i++) {
+  const elements = document.querySelectorAll("[data-field]");
+  const data = {};
+  for (let i = 0; i < elements.length; i++) {
     if (elements[i].getAttribute("type") === "checkbox") {
       data[elements[i].getAttribute("data-field")] = elements[i].checked;
     } else {
@@ -212,4 +223,37 @@ function storeForm() {
     }
   }
   localStorage.setItem("regFormData", JSON.stringify(data));
+
+  updateSubmitButtonState();
+}
+
+function restoreForm() {
+  let data = localStorage.getItem("regFormData");
+  if (data) {
+    data = JSON.parse(data);
+    Object.entries(data).forEach(([key, value]) => {
+      if (typeof value === "boolean") {
+        document.querySelector(`[data-field="${key}"]`).checked = value;
+      } else {
+        document.querySelector(`[data-field="${key}"]`).value = value;
+      }
+    });
+  }
+
+  updateSubmitButtonState();
+}
+
+function updateSubmitButtonState() {
+  const elements = document.querySelectorAll("[data-field]");
+  for (var i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    if (!isValid(element.getAttribute("data-field"), element.value)) {
+      return document
+        .querySelector('[data-content="GOTO_SUMMARY"]')
+        .classList.add("disabled");
+    }
+  }
+  document
+    .querySelector('[data-content="GOTO_SUMMARY"]')
+    .classList.remove("disabled");
 }

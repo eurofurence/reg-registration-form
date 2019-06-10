@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="countdown.js"></script>
+    <script src="translate.js"></script>
+    <script src="submit.js"></script>
+  </head>
+  <body>
+    <noscript>
+      You need to enable Javascript in order to use this site!
+    </noscript>
+    <h1 data-content="HEADER_SUBMIT"></h1>
+    <fieldset>
+      <legend data-content="NAME_ADDRESS"></legend>
+      <div>
+        <label>
+          <span data-content="NICKNAME"></span>
+          <input data-field="nickname" readonly/>
+        </label>
+      </div>
+      <div>
+        <label>
+          <span data-content="FIRST_NAME"></span>
+          <input data-field="first_name" readonly/>
+        </label>
+      </div>
+      <div>
+        <label>
+          <span data-content="LAST_NAME"></span>
+          <input data-field="last_name" readonly/>
+        </label>
+      </div>
+      <div>
+        <label>
+          <span data-content="STREET"></span>
+          <input data-field="street" readonly/>
+        </label>
+      </div>
+      <div>
+        <label>
+          <span data-content="ZIP"></span>
+          <input data-field="zip" readonly/>
+        </label>
+      </div>
+      <div>
+        <label>
+          <span data-content="CITY"></span>
+          <input data-field="city" readonly/>
+        </label>
+      </div>
+      <div>
+        <label>
+          <span data-content="COUNTRY"></span>
+          <select disabled data-field="country"> </select>
+        </label>
+      </div>
+      <div>
+        <label>
+          <span data-content="COUNTRY_BADGE"></span>
+          <select disabled data-field="country_badge"> </select>
+        </label>
+      </div>
+      <div>
+        <label>
+          <span data-content="STATE"></span>
+          <input data-field="state" readonly/>
+        </label>
+      </div>
+      <div>
+        <label>
+          <span data-content="EMAIL"></span>
+          <input data-field="email"readonly/>
+        </label>
+      </div>
+      <div>
+        <label>
+          <span data-content="PHONE"></span>
+          <input data-field="phone" readonly/>
+        </label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend data-content="PERSONAL_INFORMATION"></legend>
+      <div>
+        <label>
+          <span data-content="BIRTHDAY"></span>
+          <input type="date" data-field="birthday" readonly/>
+        </label>
+      </div>
+      <div>
+        <label>
+          <span data-content="GENDER"></span>
+          <select disabled data-field="gender">
+            <option data-content="MALE" value="male"></option>
+            <option data-content="FEMALE" value="female"></option>
+            <option data-content="OTHER" value="other"></option>
+            <option data-content="DONT_SAY" value="notprovided"></option>
+          </select>
+        </label>
+      </div>
+      <div id="flags"></div>
+      <div id="partner">
+        <label>
+          <span data-content="PARTNER"></span>
+          <input data-field="partner"></input>
+        </label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend data-content="MEMBERSHIP_PACKAGES"></legend>
+      <div id="packages"></div>
+    </fieldset>
+    <div data-snippet="form-info-text"></div>
+    <fieldset>
+      <legend data-content="OPTIONAL_INFORMATION"></legend>
+      <div>
+        <label>
+          <span data-content="TSHIRT_SIZE"></span>
+          <select disabled data-field="tshirt_size"> </select>
+        </label>
+      </div>
+      <div id="options"></div>
+      <div>
+        <label>
+          <span data-content="USER_COMMENTS"></span>
+          <textarea data-field="user_comments" readonly></textarea>
+        </label>
+      </div>
+    </fieldset>
+    <div class="confirm_checkbox">
+      <input type="checkbox" />
+      <div data-snippet="confirm_checkbox"></div>
+    </div>
+    <div class="submit">
+      <div id="countdown-container">
+        <span data-content="COUNTDOWN_PRETEXT"></span>
+        <p id="countdown"></p>
+      </div>
+      <button data-content="SUBMIT"></button>
+    </div>
+    <div class="feedback"></div>
+  </body>
+</html>
