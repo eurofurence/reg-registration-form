@@ -3,14 +3,21 @@ document.addEventListener("DOMContentLoaded", async () => {
   const config = await configResponse.json();
 
   const countdown = document.getElementById("countdown");
+  const longText = document.getElementById("countdown-text-long");
+  const shortText = document.getElementById("countdown-text-short");
 
   const endTime = new Date(config.regStart);
+
+  if (endTime.valueOf() <= Date.now()) {
+    const container = document.getElementById("countdown-container");
+    container.parentNode.removeChild(container);
+    return;
+  }
 
   function count() {
     const now = Date.now();
     if (endTime.valueOf() <= now) {
-      const container = document.getElementById("countdown-container");
-      container.parentNode.removeChild(container);
+      countdown.textContent = "00:00";
     } else {
       const useRelative = endTime.valueOf() - now < 3600000;
 
@@ -25,6 +32,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       if (useRelative) {
         time = formatRemaining(endTime.valueOf() - now);
+        longText.classList.add("hidden");
+        shortText.classList.remove("hidden");
+      } else {
+        longText.classList.remove("hidden");
+        shortText.classList.add("hidden");
       }
 
       countdown.textContent = time;
@@ -35,7 +47,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   requestAnimationFrame(count);
 });
 
-function formatRemainingTime(milliseconds) {
+function formatRemaining(milliseconds) {
   var minutes = Math.floor(milliseconds / 60 / 1000);
   var seconds = Math.floor((milliseconds / 1000) % 60);
   var ms = Math.floor((milliseconds % 1000) / 10);

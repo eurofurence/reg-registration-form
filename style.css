@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  border-top: 0.2em solid #005953;
+  background-color: #f6f6f6;
+  color: #333;
+}
+
+.container {
+  margin: auto;
+  max-width: 1024px;
+  margin-bottom: 3em;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.8em;
+  padding: 0.2em 1em;
+  background-color: #333;
+  color: #fff;
+  text-align: right;
+}
+
+.hidden {
+  display: none;
+}
+
+.button-link {
+  text-align: center;
+}
+
+.button-link a {
+  display: inline-block;
+  padding: 0.7em 1.4em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.15em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #ffffff;
+  background-color: #3369ff;
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  text-align: center;
+  position: relative;
+}
+
+.button-link a:active {
+  top: 0.1em;
+}
+
+#countdown-container {
+  text-align: center;
+  font-size: 1.2em;
+}
+
+#countdown {
+  font-size: 1.2em;
+}
+
+.helptext {
+  display: none;
+  float: right;
+}
+
+.expanded .helptext {
+  display: block;
+}
+
+label span {
+  display: block;
+  font-size: 0.9em;
+  color: #555;
+}
+
+fieldset {
+  margin: 1em 0;
+}
+
+fieldset legend {
+  font-size: 1.2em;
+}
+
+fieldset div {
+  margin: 0.5em 0;
+}
+
+fieldset input,
+fieldset select {
+  padding: 0.5em;
+  min-width: 40%;
+  border: 1px solid lightgray;
+  border-radius: 2px;
+}
+
+fieldset button,
+fieldset input {
+  height: 1.8rem;
+}
+
+fieldset button {
+  width: 1.8rem;
+}

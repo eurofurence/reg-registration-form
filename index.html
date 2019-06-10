@@ -3,18 +3,26 @@
   <head>
     <script src="countdown.js"></script>
     <script src="translate.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <noscript>
       You need to enable Javascript in order to use this site!
     </noscript>
-    <h1 data-content="HEADER"></h1>
-    <div data-snippet="pre-countdown-content"></div>
-    <div id="countdown-container">
-      <span data-content="COUNTDOWN_PRETEXT"></span>
-      <p id="countdown"></p>
+    <div data-snippet="header"></div>
+    <div class="container">
+      <div data-snippet="landing-pre"></div>
+      <div id="countdown-container">
+        <p id="countdown-text-long" data-content="COUNTDOWN_PRETEXT_LONG"></p>
+        <p id="countdown-text-short" data-content="COUNTDOWN_PRETEXT_SHORT"></p>
+        <p id="countdown"></p>
+      </div>
+      <div class="button-link">
+        <a href="./form.html" data-content="START_REG"></a>
+      </div>
+      <div data-snippet="landing-post"></div>
     </div>
-    <a href="./form.html" data-content="START_REG"></a>
-    <div data-snippet="post-countdown-content"></div>
+    <div data-snippet="footer"></div>
   </body>
 </html>
