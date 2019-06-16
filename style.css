@@ -73,7 +73,8 @@ body {
   margin-left: 30%;
 }
 
-label span {
+label span,
+.options span {
   display: inline-block;
   width: 30%;
   font-weight: bold;
@@ -102,6 +103,15 @@ fieldset textarea {
   width: 40%;
   border: 1px solid lightgray;
   border-radius: 2px;
+  height: 1.8rem;
+}
+
+fieldset textarea {
+  height: 4rem;
+}
+
+fieldset select {
+  padding: 0 0.3em;
 }
 
 fieldset button,
@@ -112,4 +122,39 @@ fieldset input {
 fieldset button {
   width: 1.8rem;
   vertical-align: top;
+}
+
+.options > div {
+  display: inline-block;
+}
+
+.options input {
+  height: 1rem;
+  width: 1rem;
+}
+
+.options label {
+  display: inline-block;
+  width: 398px;
+}
+
+.options label * {
+  vertical-align: middle;
+}
+
+.options label span {
+  width: initial;
+  font-weight: normal;
+}
+
+.options > div {
+  margin: 0;
+}
+
+.options > div > div:first-child {
+  margin-top: 0;
+}
+
+.options > div > div:last-child {
+  margin-bottom: 0;
 }

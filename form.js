@@ -117,10 +117,10 @@ function setupOptions(selector, options, lang) {
   options.forEach(option => {
     const entry = document.createElement("div");
     entry.innerHTML = `<label>
-      <span>${option[lang].label}</span>
-      <input type="checkbox" data-field="${selector}:${option.code}"${
+    <input type="checkbox" data-field="${selector}:${option.code}"${
       option.default ? " checked" : ""
     }></input>
+      <span>${option[lang].label}</span>
     </label>
     <button class="help-toggle-button">?</button>
     <p class="helptext">${option[lang].description}</p>
