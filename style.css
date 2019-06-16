@@ -66,17 +66,21 @@ body {
 
 .helptext {
   display: none;
-  float: right;
 }
 
 .expanded .helptext {
   display: block;
+  margin-left: 30%;
 }
 
 label span {
-  display: block;
-  font-size: 0.9em;
+  display: inline-block;
+  width: 30%;
+  font-weight: bold;
+  text-align: right;
+  padding: 0.3em;
   color: #555;
+  vertical-align: top;
 }
 
 fieldset {
@@ -92,9 +96,10 @@ fieldset div {
 }
 
 fieldset input,
-fieldset select {
+fieldset select,
+fieldset textarea {
   padding: 0.5em;
-  min-width: 40%;
+  width: 40%;
   border: 1px solid lightgray;
   border-radius: 2px;
 }
@@ -106,4 +111,5 @@ fieldset input {
 
 fieldset button {
   width: 1.8rem;
+  vertical-align: top;
 }
