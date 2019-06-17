@@ -1,7 +1,18 @@
 document.addEventListener("click", evt => {
   const target = evt.target;
+
+  if (target.classList.contains("disabled")) {
+    evt.preventDefault();
+  }
+
   if (target.classList.contains("help-toggle-button")) {
-    target.parentNode.classList.toggle("expanded");
+    if (target.classList.contains("table-help")) {
+      target.parentNode.parentNode.nextElementSibling.classList.toggle(
+        "expanded"
+      );
+    } else {
+      target.parentNode.classList.toggle("expanded");
+    }
   }
 });
 
@@ -146,7 +157,7 @@ function setupPackages(tiers, packages, lang) {
       </th>`
       )
       .join("")}
-  </tr>`;
+  <th></th></tr>`;
   table.appendChild(head);
 
   // body
@@ -161,11 +172,11 @@ function setupPackages(tiers, packages, lang) {
       }></input>
       <span>${package[lang].label}</span>
       </label>
-      <button class="help-toggle-button">?</button>
-      <p class="helptext">${package[lang].description}</p>
     </td>
     ${package.price.map(price => `<td>${price}</td>`).join("")}
-  </tr>`
+    <td><button class="help-toggle-button table-help">?</button></td>
+    </tr>
+    <div class="helptext-container"><div class="helptext">sdflköjsdflösdfölkj</div></div>`
     )
     .join("");
   table.appendChild(body);
