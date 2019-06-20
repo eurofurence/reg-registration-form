@@ -30,5 +30,9 @@
   "TSHIRT_SIZE": "T-Shirt size",
   "USER_COMMENTS": "Comments",
   "OPTIONS": "Options",
-  "GOTO_SUMMARY": "See Summary"
+  "GOTO_SUMMARY": "See Summary",
+  "MALE": "male",
+  "FEMALE": "female",
+  "OTHER": "other",
+  "DONT_SAY": "Don't wish to say"
 }

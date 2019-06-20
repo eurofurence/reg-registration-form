@@ -1,0 +1,29 @@
+fieldset input,
+fieldset select,
+fieldset textarea {
+  border: none;
+  background: none;
+  color: #333;
+  cursor: default;
+}
+
+fieldset input:focus,
+fieldset select:focus,
+fieldset textarea:focus {
+  outline: none;
+}
+
+fieldset select,
+fieldset textarea {
+  -webkit-appearance: none;
+  resize: none;
+}
+
+fieldset > div {
+  margin: 0;
+}
+
+fieldset {
+  width: 45%;
+  margin: 1em 1em;
+}

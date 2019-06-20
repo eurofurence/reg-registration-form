@@ -4,13 +4,18 @@
     <script src="countdown.js"></script>
     <script src="translate.js"></script>
     <script src="submit.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="submit.css" />
   </head>
   <body>
     <noscript>
       You need to enable Javascript in order to use this site!
     </noscript>
-    <h1 data-content="HEADER_SUBMIT"></h1>
-    <fieldset>
+    <div data-snippet="header"></div>
+    <div class="container">
+      <div data-snippet="submit-pre"></div>
+    <fieldset style="float: left;">
       <legend data-content="NAME_ADDRESS"></legend>
       <div>
         <label>
@@ -79,7 +84,7 @@
         </label>
       </div>
     </fieldset>
-    <fieldset>
+    <fieldset style="float: right;">
       <legend data-content="PERSONAL_INFORMATION"></legend>
       <div>
         <label>
@@ -106,7 +111,7 @@
         </label>
       </div>
     </fieldset>
-    <fieldset>
+    <fieldset style="float: right;">
       <legend data-content="MEMBERSHIP_PACKAGES"></legend>
       <div id="packages"></div>
     </fieldset>
@@ -139,5 +144,8 @@
       <button data-content="SUBMIT"></button>
     </div>
     <div class="feedback"></div>
+    <div data-snippet="submit-post"></div>
+    </div>
+    <div data-snippet="footer"></div>
   </body>
 </html>
