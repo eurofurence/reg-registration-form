@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupPackages(config.tiers, config.packages, lang);
 
   restoreForm();
+
+  hideUnchecked();
 });
 
 function setupCountries(countries, lang) {
@@ -65,10 +67,10 @@ function setupOptions(selector, options, lang) {
   options.forEach(option => {
     const entry = document.createElement("div");
     entry.innerHTML = `<label>
-      <span>${option[lang].label}</span>
-      <input disabled type="checkbox" data-field="${selector}:${option.code}"${
+    <input disabled type="checkbox" data-field="${selector}:${option.code}"${
       option.default ? " checked" : ""
     }></input>
+      <span>${option[lang].label}</span>
     </label>
     `;
 
@@ -115,5 +117,16 @@ function restoreForm() {
         }
       }
     });
+  }
+}
+
+function hideUnchecked() {
+  const elements = document.querySelectorAll('fieldset input[type="checkbox"]');
+
+  for (let i = 0; i < elements.length; i++) {
+    if (!elements[i].checked) {
+      const container = elements[i].parentNode.parentNode;
+      container.parentNode.removeChild(container);
+    }
   }
 }

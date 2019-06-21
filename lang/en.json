@@ -34,5 +34,6 @@
   "MALE": "male",
   "FEMALE": "female",
   "OTHER": "other",
-  "DONT_SAY": "Don't wish to say"
+  "DONT_SAY": "Don't wish to say",
+  "CONVENTION_INFO": "Convention Information"
 }

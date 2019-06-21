@@ -15,8 +15,8 @@
     <div data-snippet="header"></div>
     <div class="container">
       <div data-snippet="submit-pre"></div>
-    <fieldset style="float: left;">
-      <legend data-content="NAME_ADDRESS"></legend>
+    <fieldset>
+      <legend data-content="PERSONAL_INFORMATION"></legend>
       <div>
         <label>
           <span data-content="NICKNAME"></span>
@@ -83,9 +83,6 @@
           <input data-field="phone" readonly/>
         </label>
       </div>
-    </fieldset>
-    <fieldset style="float: right;">
-      <legend data-content="PERSONAL_INFORMATION"></legend>
       <div>
         <label>
           <span data-content="BIRTHDAY"></span>
@@ -103,7 +100,6 @@
           </select>
         </label>
       </div>
-      <div id="flags"></div>
       <div id="partner">
         <label>
           <span data-content="PARTNER"></span>
@@ -111,20 +107,26 @@
         </label>
       </div>
     </fieldset>
-    <fieldset style="float: right;">
-      <legend data-content="MEMBERSHIP_PACKAGES"></legend>
-      <div id="packages"></div>
-    </fieldset>
-    <div data-snippet="form-info-text"></div>
     <fieldset>
-      <legend data-content="OPTIONAL_INFORMATION"></legend>
+      <legend data-content="CONVENTION_INFO"></legend>
+      <div class="options">
+        <span data-content="MEMBERSHIP_PACKAGES"></span>
+        <div id="packages"></div>
+      </div>
+      <div class="options">
+        <span data-content="OPTIONS"></span>
+        <div id="flags"></div>
+      </div>
+      <div class="options">
+        <span></span>
+        <div id="options"></div>
+      </div>
       <div>
         <label>
           <span data-content="TSHIRT_SIZE"></span>
           <select disabled data-field="tshirt_size"> </select>
         </label>
       </div>
-      <div id="options"></div>
       <div>
         <label>
           <span data-content="USER_COMMENTS"></span>

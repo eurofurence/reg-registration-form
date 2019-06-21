@@ -19,11 +19,31 @@ fieldset textarea {
   resize: none;
 }
 
-fieldset > div {
+fieldset > div,
+fieldset div {
   margin: 0;
 }
 
 fieldset {
   width: 45%;
   margin: 1em 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.options > div {
+  width: 65%;
+}
+
+.options > div:empty {
+  content: "--";
+  display: inline-block;
+}
+
+table tbody tr td:first-child {
+  background-color: transparent;
+}
+
+fieldset input[type="checkbox"] {
+  display: none;
 }
