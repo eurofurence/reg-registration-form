@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
 
       const subfields = field.split(":");
-      if (subfields[0] === "package") {
+      if (subfields[0] === "packages") {
         const value = subfields[1];
         if (evt.target.checked) {
           config.packageExclusivity.forEach(exclusives => {
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               exclusives.forEach(excludedPackage => {
                 if (excludedPackage !== value) {
                   document.querySelector(
-                    '[data-field="package:' + excludedPackage + '"]'
+                    '[data-field="packages:' + excludedPackage + '"]'
                   ).checked = false;
                 }
               });
@@ -167,7 +167,7 @@ function setupPackages(tiers, packages, lang) {
       package => `<tr>
     <td>
       <label>
-      <input type="checkbox" data-field="package:${package.code}"${
+      <input type="checkbox" data-field="packages:${package.code}"${
         package.default ? " checked" : ""
       }></input>
       <span>${package[lang].label}</span>
