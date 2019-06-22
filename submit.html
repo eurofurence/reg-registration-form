@@ -136,16 +136,16 @@
     </fieldset>
     <div class="confirm_checkbox">
       <input type="checkbox" />
-      <div data-snippet="confirm_checkbox"></div>
+      <span data-snippet="confirm_checkbox"></span>
     </div>
     <div class="submit">
       <div id="countdown-container">
-        <span data-content="COUNTDOWN_PRETEXT"></span>
+        <p id="countdown-text-long" data-content="SUBMIT_COUNTDOWN_PRETEXT_LONG"></p>
+        <p id="countdown-text-short" data-content="SUBMIT_COUNTDOWN_PRETEXT_SHORT"></p>
         <p id="countdown"></p>
       </div>
-      <button data-content="SUBMIT"></button>
+      <button data-content="SUBMIT" disabled class="activate-after-countdown"></button>
     </div>
-    <div class="feedback"></div>
     <div data-snippet="submit-post"></div>
     </div>
     <div data-snippet="footer"></div>

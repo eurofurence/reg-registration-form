@@ -2,6 +2,8 @@
   "HEADER": "Eurofurence Registration",
   "COUNTDOWN_PRETEXT_LONG": "The registration starts on",
   "COUNTDOWN_PRETEXT_SHORT": "Registration starts soon! Get ready!",
+  "SUBMIT_COUNTDOWN_PRETEXT_LONG": "You can submit your registration on",
+  "SUBMIT_COUNTDOWN_PRETEXT_SHORT": "Registration starts soon! Get ready!",
   "START_REG": "Start Registration!",
   "WELCOME_TEXT": "Welcome to the Eurofurence Registration System. Before you continue, please have a look at our Policies. By submitting your registration, having it accepted by us, and then initiating your payment, you enter a legally binding contract with Eurofurence e.V. that these terms and conditions become a part of.",
   "HOW_TO_REGISTER_TITLE": "How to register",
@@ -35,5 +37,8 @@
   "FEMALE": "female",
   "OTHER": "other",
   "DONT_SAY": "Don't wish to say",
-  "CONVENTION_INFO": "Convention Information"
+  "CONVENTION_INFO": "Convention Information",
+  "RULES_CHECKBOX": "I have understood the rules and stuff.",
+  "RULES_CHECKBOX_LINK": "It can even contain a link",
+  "SUBMIT": "Submit Registration"
 }

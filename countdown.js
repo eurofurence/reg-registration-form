@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (endTime.valueOf() <= Date.now()) {
     const container = document.getElementById("countdown-container");
     container.parentNode.removeChild(container);
+
+    activateButton();
+
     return;
   }
 
@@ -18,6 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const now = Date.now();
     if (endTime.valueOf() <= now) {
       countdown.textContent = "00:00";
+      activateButton();
     } else {
       const useRelative = endTime.valueOf() - now < 3600000;
 
@@ -60,4 +64,12 @@ function formatRemaining(milliseconds) {
 
 function leftPad(number) {
   return number.toString().length < 2 ? "0" + number : number;
+}
+
+function activateButton() {
+  const elements = document.querySelectorAll(".activate-after-countdown");
+
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].removeAttribute("disabled");
+  }
 }
