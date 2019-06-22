@@ -40,5 +40,10 @@
   "CONVENTION_INFO": "Convention Information",
   "RULES_CHECKBOX": "I have understood the rules and stuff.",
   "RULES_CHECKBOX_LINK": "It can even contain a link",
-  "SUBMIT": "Submit Registration"
+  "SUBMIT": "Submit Registration",
+  "ERROR_CHECKBOX": "You need to check the checkbox that you have understood the rules before you can submit your registration",
+  "ERROR_COUNTDOWN": "Submission of Registration is not yet available",
+  "ERROR_INVALID": "Your entered registration data is invalid. Please go back and correct it.",
+  "ERROR_UNKNOWN": "An unknown error occured. Please try again.",
+  "SUCCESS": "Submission Successful! You will receive an email with a confirmation link. Please note that it takes at least 30 minuted for the Email to arrive. Your registration number is: "
 }

@@ -1,3 +1,5 @@
+let texts;
+
 document.addEventListener("DOMContentLoaded", async () => {
   const configResponse = await fetch("./config.json");
   const config = await configResponse.json();
@@ -9,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   const textsResponse = await fetch("lang/" + lang + ".json");
-  const texts = await textsResponse.json();
+  texts = await textsResponse.json();
 
   await resolveSnippets();
 
@@ -31,4 +33,8 @@ async function resolveSnippets() {
 
     elements[i].innerHTML = snippetHtml;
   }
+}
+
+function translate(KEY) {
+  return texts[KEY];
 }

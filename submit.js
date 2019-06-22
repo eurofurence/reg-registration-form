@@ -138,13 +138,13 @@ function setupSubmitButton(startDate, endpoint) {
 
   btn.addEventListener("click", async () => {
     if (!checkboxIsChecked()) {
-      return showError("checkbox");
+      return showError("CHECKBOX");
     }
     if (!countdownIsReady(startDate)) {
-      return showError("countdown");
+      return showError("COUNTDOWN");
     }
     if (!formValid()) {
-      return showError("valid");
+      return showError("INVALID");
     }
     btn.setAttribute("disabled", true);
     try {
@@ -153,10 +153,15 @@ function setupSubmitButton(startDate, endpoint) {
         body: JSON.stringify(getPayload()),
         headers: { "Content-Type": "application/json" }
       });
+
       const data = await response.text();
 
-      showSuccess(data);
-      btn.removeAttribute("disabled");
+      if (response.status !== 200) {
+        showError(data || "UNKNOWN");
+        btn.removeAttribute("disabled");
+      } else {
+        showSuccess(data);
+      }
     } catch (e) {
       showError(e);
       btn.removeAttribute("disabled");
@@ -173,18 +178,23 @@ function countdownIsReady(date) {
 }
 
 function showSuccess(data) {
-  alert(data);
+  const element = document.querySelector("#submit-response");
+
+  element.classList.remove("error");
+  element.textContent = translate("SUCCESS") + data;
 }
 
 function showError(data) {
-  alert(data);
+  const element = document.querySelector("#submit-response");
+
+  element.classList.add("error");
+  element.textContent = translate("ERROR_" + data);
 }
 
 function getPayload() {
   let data = localStorage.getItem("regFormData");
   if (data) {
     data = JSON.parse(data);
-    console.log("form data", data);
 
     delete data.email_repeat;
     aggregate("flags", data);
