@@ -4,15 +4,20 @@
 
 body {
   margin: 0;
-  border-top: 0.2em solid #005953;
   background-color: #f6f6f6;
   color: #333;
+  background: url("background.jpg") no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
 }
 
 .container {
   margin: auto;
   max-width: 1024px;
   margin-bottom: 3em;
+  background-color: #f6f6f6;
+  padding: 2em;
 }
 
 .footer {
