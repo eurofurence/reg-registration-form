@@ -328,7 +328,7 @@
     "youngest": "2001-01-01",
     "oldest": "1950-01-01"
   },
-  "regStart": "2019-06-22T15:22:00+02:00",
+  "regStart": "2019-06-24T15:22:00+02:00",
   "apiEndpoint": "http://localhost:8080/registration/new",
   "flags": [
     {

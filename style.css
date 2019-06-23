@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+a {
+  color: #0087ff;
+}
+
 body {
   margin: 0;
   background-color: #f6f6f6;
@@ -18,6 +22,7 @@ body {
   margin-bottom: 3em;
   background-color: #f6f6f6;
   padding: 2em;
+  border: 2px solid black;
 }
 
 .footer {
@@ -26,7 +31,7 @@ body {
   width: 100%;
   font-size: 0.8em;
   padding: 0.2em 1em;
-  background-color: #333;
+  background-color: #005953;
   color: #fff;
   text-align: right;
 }
@@ -50,7 +55,7 @@ body {
   text-transform: uppercase;
   font-weight: 400;
   color: #ffffff;
-  background-color: #3369ff;
+  background-color: #005953;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
   text-align: center;
   position: relative;
@@ -145,7 +150,7 @@ input[type="checkbox"] {
 
 .options label {
   display: inline-block;
-  width: 398px;
+  width: 371px;
 }
 
 .options label *,
@@ -215,4 +220,8 @@ th * {
   border: 1px solid #ff5555;
   background-color: #ffdddd;
   color: #880000;
+}
+
+h1 a {
+  font-size: 0.6em;
 }
