@@ -1,24 +1,3 @@
-fieldset input,
-fieldset select,
-fieldset textarea {
-  border: none;
-  background: none;
-  color: #333;
-  cursor: default;
-}
-
-fieldset input:focus,
-fieldset select:focus,
-fieldset textarea:focus {
-  outline: none;
-}
-
-fieldset select,
-fieldset textarea {
-  -webkit-appearance: none;
-  resize: none;
-}
-
 fieldset > div,
 fieldset div {
   margin: 0;
@@ -31,52 +10,43 @@ fieldset {
   vertical-align: top;
 }
 
-.options > div {
+fieldset > div > span:first-child {
+  display: inline-block;
+  width: 30%;
+  font-weight: bold;
+  text-align: right;
+  padding: 0.3em;
+  color: #555;
+}
+
+fieldset > div > span:last-child {
+  padding: 0.3em;
+  display: inline-block;
+  vertical-align: top;
   width: 65%;
 }
 
-.options > div:empty {
-  content: "--";
-  display: inline-block;
+#options,
+#packages {
+  width: 65%;
+}
+
+#options > span,
+#packages > span {
+  width: 100%;
+  display: block;
+  font-weight: normal;
+  text-align: left;
+  color: #333;
 }
 
 table tbody tr td:first-child {
   background-color: transparent;
 }
 
-fieldset input[type="checkbox"] {
-  display: none;
-}
-
 .submit {
   text-align: center;
-}
-
-button {
-  border: none;
-  display: inline-block;
-  padding: 0.7em 1.4em;
-  margin: 0 0.3em 0.3em 0;
-  border-radius: 0.15em;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  font-weight: 400;
-  color: #ffffff;
-  background-color: #3369ff;
-  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
-  text-align: center;
-  position: relative;
-}
-
-button:disabled {
-  background-color: lightgray;
-  cursor: not-allowed;
-}
-
-button:active {
-  top: 0.1em;
+  margin-top: 1em;
 }
 
 .confirm_checkbox > * {

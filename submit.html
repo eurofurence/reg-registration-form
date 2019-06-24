@@ -15,139 +15,115 @@
     <div data-snippet="header"></div>
     <div class="container">
       <div data-snippet="submit-pre"></div>
-    <fieldset>
-      <legend data-content="PERSONAL_INFORMATION"></legend>
-      <div>
-        <label>
+      <fieldset>
+        <legend data-content="PERSONAL_INFORMATION"></legend>
+        <div>
           <span data-content="NICKNAME"></span>
-          <input data-field="nickname" readonly/>
-        </label>
-      </div>
-      <div>
-        <label>
+          <span data-field="nickname"></span>
+        </div>
+        <div>
           <span data-content="FIRST_NAME"></span>
-          <input data-field="first_name" readonly/>
-        </label>
-      </div>
-      <div>
-        <label>
+          <span data-field="first_name"></span>
+        </div>
+        <div>
           <span data-content="LAST_NAME"></span>
-          <input data-field="last_name" readonly/>
-        </label>
-      </div>
-      <div>
-        <label>
+          <span data-field="last_name"></span>
+        </div>
+        <div>
           <span data-content="STREET"></span>
-          <input data-field="street" readonly/>
-        </label>
-      </div>
-      <div>
-        <label>
+          <span data-field="street"></span>
+        </div>
+        <div>
           <span data-content="ZIP"></span>
-          <input data-field="zip" readonly/>
-        </label>
-      </div>
-      <div>
-        <label>
+          <span data-field="zip"></span>
+        </div>
+        <div>
           <span data-content="CITY"></span>
-          <input data-field="city" readonly/>
-        </label>
-      </div>
-      <div>
-        <label>
+          <span data-field="city"></span>
+        </div>
+        <div>
           <span data-content="COUNTRY"></span>
-          <select disabled data-field="country"> </select>
-        </label>
-      </div>
-      <div>
-        <label>
+          <span data-field="country"> </span>
+        </div>
+        <div>
           <span data-content="COUNTRY_BADGE"></span>
-          <select disabled data-field="country_badge"> </select>
-        </label>
-      </div>
-      <div>
-        <label>
+          <span data-field="country_badge"> </span>
+        </div>
+        <div>
           <span data-content="STATE"></span>
-          <input data-field="state" readonly/>
-        </label>
-      </div>
-      <div>
-        <label>
+          <span data-field="state"></span>
+        </div>
+        <div>
           <span data-content="EMAIL"></span>
-          <input data-field="email"readonly/>
-        </label>
-      </div>
-      <div>
-        <label>
+          <span data-field="email"></span>
+        </div>
+        <div>
           <span data-content="PHONE"></span>
-          <input data-field="phone" readonly/>
-        </label>
-      </div>
-      <div>
-        <label>
+          <span data-field="phone"></span>
+        </div>
+        <div>
           <span data-content="BIRTHDAY"></span>
-          <input type="date" data-field="birthday" readonly/>
-        </label>
-      </div>
-      <div>
-        <label>
+          <span data-field="birthday"></span>
+        </div>
+        <div>
           <span data-content="GENDER"></span>
-          <select disabled data-field="gender">
-            <option data-content="MALE" value="male"></option>
-            <option data-content="FEMALE" value="female"></option>
-            <option data-content="OTHER" value="other"></option>
-            <option data-content="DONT_SAY" value="notprovided"></option>
-          </select>
-        </label>
-      </div>
-      <div id="partner">
-        <label>
+          <span class="gender" data-key="male" data-content="MALE"></span>
+          <span class="gender" data-key="female" data-content="FEMALE"></span>
+          <span class="gender" data-key="other" data-content="OTHER"></span>
+          <span
+            class="gender"
+            data-key="notprovided"
+            data-content="DONT_SAY"
+          ></span>
+        </div>
+        <div id="partner">
           <span data-content="PARTNER"></span>
-          <input data-field="partner"></input>
-        </label>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend data-content="CONVENTION_INFO"></legend>
-      <div class="options">
-        <span data-content="MEMBERSHIP_PACKAGES"></span>
-        <div id="packages"></div>
-      </div>
-      <div class="options">
-        <span data-content="OPTIONS"></span>
-        <div id="flags"></div>
-      </div>
-      <div class="options">
-        <span></span>
-        <div id="options"></div>
-      </div>
-      <div>
-        <label>
+          <span data-field="partner"></span>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend data-content="CONVENTION_INFO"></legend>
+        <div class="options">
+          <span data-content="MEMBERSHIP_PACKAGES"></span>
+          <div id="packages"></div>
+        </div>
+        <div class="options">
+          <span data-content="OPTIONS"></span>
+          <div id="options"></div>
+        </div>
+        <div>
           <span data-content="TSHIRT_SIZE"></span>
-          <select disabled data-field="tshirt_size"> </select>
-        </label>
-      </div>
-      <div>
-        <label>
+          <span data-field="tshirt_size"></span>
+        </div>
+        <div>
           <span data-content="USER_COMMENTS"></span>
-          <textarea data-field="user_comments" readonly></textarea>
-        </label>
+          <span data-field="user_comments"></span>
+        </div>
+      </fieldset>
+      <div class="confirm_checkbox">
+        <input type="checkbox" />
+        <span data-snippet="confirm_checkbox"></span>
       </div>
-    </fieldset>
-    <div class="confirm_checkbox">
-      <input type="checkbox" />
-      <span data-snippet="confirm_checkbox"></span>
-    </div>
-    <div class="submit">
-      <div id="countdown-container">
-        <p id="countdown-text-long" data-content="SUBMIT_COUNTDOWN_PRETEXT_LONG"></p>
-        <p id="countdown-text-short" data-content="SUBMIT_COUNTDOWN_PRETEXT_SHORT"></p>
-        <p id="countdown"></p>
+      <div class="submit">
+        <div id="countdown-container">
+          <p
+            id="countdown-text-long"
+            data-content="SUBMIT_COUNTDOWN_PRETEXT_LONG"
+          ></p>
+          <p
+            id="countdown-text-short"
+            data-content="SUBMIT_COUNTDOWN_PRETEXT_SHORT"
+          ></p>
+          <p id="countdown"></p>
+        </div>
+        <button
+          data-content="SUBMIT"
+          disabled
+          class="activate-after-countdown"
+        ></button>
+        <p id="submit-response"></p>
       </div>
-      <button data-content="SUBMIT" disabled class="activate-after-countdown"></button>
-      <p id="submit-response"></p>
-    </div>
-    <div data-snippet="submit-post"></div>
+      <div data-snippet="submit-post"></div>
     </div>
     <div data-snippet="footer"></div>
   </body>

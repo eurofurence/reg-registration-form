@@ -44,7 +44,9 @@ body {
   text-align: center;
 }
 
-.button-link a {
+.button-link a,
+.submit button {
+  border: none;
   display: inline-block;
   padding: 0.7em 1.4em;
   margin: 0 0.3em 0.3em 0;
@@ -61,12 +63,14 @@ body {
   position: relative;
 }
 
-.button-link a.disabled {
+.button-link a.disabled,
+.submit button:disabled {
   cursor: not-allowed;
   background-color: lightgray;
 }
 
-.button-link a:active {
+.button-link a:active,
+.submit button:active {
   top: 0.1em;
 }
 
