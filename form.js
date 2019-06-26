@@ -176,7 +176,9 @@ function setupPackages(tiers, packages, lang) {
     ${package.price.map(price => `<td>${price}</td>`).join("")}
     <td><button class="help-toggle-button table-help">?</button></td>
     </tr>
-    <div class="helptext-container"><div class="helptext">sdflköjsdflösdfölkj</div></div>`
+    <div class="helptext-container"><div class="helptext">${
+      package[lang].description
+    }</div></div>`
     )
     .join("");
   table.appendChild(body);

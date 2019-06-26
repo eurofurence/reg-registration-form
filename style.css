@@ -45,7 +45,7 @@ body {
 }
 
 .button-link a,
-.submit button {
+button {
   border: none;
   display: inline-block;
   padding: 0.7em 1.4em;
@@ -64,14 +64,18 @@ body {
 }
 
 .button-link a.disabled,
-.submit button:disabled {
+button:disabled {
   cursor: not-allowed;
   background-color: lightgray;
 }
 
 .button-link a:active,
-.submit button:active {
+button:active {
   top: 0.1em;
+}
+
+fieldset button {
+  padding: 0;
 }
 
 #countdown-container {
@@ -84,13 +88,25 @@ body {
 }
 
 .helptext {
+  max-height: 0;
+  transition: max-height 0.5s;
+  margin: 0 0 0 30%;
+  padding-left: 0.5em;
+  overflow: hidden;
+}
+
+.expanded .helptext {
+  max-height: 15em;
+}
+
+/* .helptext {
   display: none;
 }
 
 .expanded .helptext {
   display: block;
   margin-left: 30%;
-}
+} */
 
 label span,
 .options span {
@@ -204,6 +220,11 @@ table label span {
 
 fieldset div.helptext-container {
   margin: 0;
+  display: none;
+}
+
+fieldset div.helptext-container.expanded {
+  display: block;
 }
 
 th {
@@ -228,4 +249,22 @@ th * {
 
 h1 a {
   font-size: 0.6em;
+}
+
+fieldset input[data-field="zip"] {
+  width: 10%;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+fieldset input[data-field="city"] {
+  width: 30%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.options .helptext,
+.helptext-container .helptext {
+  margin: 0;
 }

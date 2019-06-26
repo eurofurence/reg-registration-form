@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const elements = document.querySelectorAll("[data-content]");
 
   for (let i = 0; i < elements.length; i++) {
-    elements[i].textContent = texts[elements[i].getAttribute("data-content")];
+    elements[i].innerHTML = texts[elements[i].getAttribute("data-content")];
   }
 });
 
