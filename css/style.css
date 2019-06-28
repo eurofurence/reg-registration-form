@@ -10,7 +10,7 @@ body {
   margin: 0;
   background-color: #f6f6f6;
   color: #333;
-  background: url("background.jpg") no-repeat;
+  background: url("../img/background.jpg") no-repeat;
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
@@ -98,15 +98,6 @@ fieldset button {
 .expanded .helptext {
   max-height: 15em;
 }
-
-/* .helptext {
-  display: none;
-}
-
-.expanded .helptext {
-  display: block;
-  margin-left: 30%;
-} */
 
 label span,
 .options span {

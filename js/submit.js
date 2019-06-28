@@ -204,13 +204,15 @@ function aggregate(type, data) {
 }
 
 function formValid() {
-  const elements = document.querySelectorAll("[data-field]");
-  for (var i = 0; i < elements.length; i++) {
-    const element = elements[i];
-    if (!isValid(element.getAttribute("data-field"), element.value)) {
+  const payload = getPayload();
+  const keys = Object.keys(payload);
+
+  for (let i = 0; i < keys.length; i++) {
+    if (!isValid(keys[i], payload[keys[i]])) {
       return false;
     }
   }
+
   return true;
 }
 
