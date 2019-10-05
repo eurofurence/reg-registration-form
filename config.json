@@ -5,6 +5,7 @@
     "de": "Deutsch"
   },
   "availableCountries": {
+    "none": { "en": "- Please Select -", "de": "- Bitte Auswählen -" },
     "AD": { "en": "Andorra", "de": "Andorra" },
     "AE": {
       "en": "United Arab Emirates",
@@ -328,7 +329,7 @@
     "youngest": "2001-01-01",
     "oldest": "1950-01-01"
   },
-  "regStart": "2020-01-11T18:00:00+01:00",
+  "timeServer": "http://example.com/time/",
   "apiEndpoint": "http://localhost:8080/registration/new",
   "flags": [
     {

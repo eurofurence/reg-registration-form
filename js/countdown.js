@@ -2,13 +2,32 @@ document.addEventListener("DOMContentLoaded", async () => {
   const configResponse = await fetch("./config.json");
   const config = await configResponse.json();
 
+  loadTime(config);
+});
+
+async function loadTime(config) {
   const countdown = document.getElementById("countdown");
   const longText = document.getElementById("countdown-text-long");
   const shortText = document.getElementById("countdown-text-short");
+  const error = document.getElementById("countdown-error");
 
-  const endTime = new Date(config.regStart);
+  let timeResponse, time;
 
-  if (endTime.valueOf() <= Date.now()) {
+  try {
+    timeResponse = await fetch(config.timeServer);
+    time = await timeResponse.json();
+  } catch (e) {
+    longText.classList.add("hidden");
+    shortText.classList.add("hidden");
+    error.classList.remove("hidden");
+    return setTimeout(() => loadTime(config), 5000);
+  }
+
+  error.classList.add("hidden");
+
+  const endTime = Date.now() + time.countdown * 1000;
+
+  if (endTime <= Date.now()) {
     const container = document.getElementById("countdown-container");
     container.parentNode.removeChild(container);
 
@@ -19,13 +38,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   function count() {
     const now = Date.now();
-    if (endTime.valueOf() <= now) {
+    if (endTime <= now) {
       countdown.textContent = "00:00";
       activateButton();
     } else {
-      const useRelative = endTime.valueOf() - now < 3600000;
+      const useRelative = endTime - now < 3600000;
 
-      let time = endTime.toLocaleDateString("default", {
+      let timeString = new Date(time.targetTime).toLocaleDateString("default", {
         weekday: "long",
         year: "numeric",
         month: "long",
@@ -35,7 +54,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
 
       if (useRelative) {
-        time = formatRemaining(endTime.valueOf() - now);
+        timeString = formatRemaining(endTime - now);
         longText.classList.add("hidden");
         shortText.classList.remove("hidden");
       } else {
@@ -43,13 +62,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         shortText.classList.add("hidden");
       }
 
-      countdown.textContent = time;
+      countdown.textContent = timeString;
       requestAnimationFrame(count);
     }
   }
 
   requestAnimationFrame(count);
-});
+}
 
 function formatRemaining(milliseconds) {
   var minutes = Math.floor(milliseconds / 60 / 1000);

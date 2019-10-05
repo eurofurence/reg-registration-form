@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupBirthday();
   setupGender();
 
-  setupSubmitButton(config.regStart, config.apiEndpoint);
+  setupSubmitButton(config.apiEndpoint);
 });
 
 function setupCountries(countries, lang) {
@@ -116,14 +116,25 @@ function restoreForm() {
   }
 }
 
-function setupSubmitButton(startDate, endpoint) {
+function setupSubmitButton(endpoint) {
   const btn = document.querySelector('button[data-content="SUBMIT"]');
 
+  const payload = JSON.stringify(getPayload());
+
   btn.addEventListener("click", async () => {
+    let timeResponse, time;
+
+    try {
+      timeResponse = await fetch(config.timeServer);
+      time = await timeResponse.json();
+    } catch (e) {
+      return showError("TIMESERVER");
+    }
+
     if (!checkboxIsChecked()) {
       return showError("CHECKBOX");
     }
-    if (!countdownIsReady(startDate)) {
+    if (time.countdown > 0) {
       return showError("COUNTDOWN");
     }
     if (!formValid()) {
@@ -133,13 +144,13 @@ function setupSubmitButton(startDate, endpoint) {
     try {
       const response = await fetch(endpoint, {
         method: "PUT",
-        body: JSON.stringify(getPayload()),
+        body: payload,
         headers: { "Content-Type": "application/json" }
       });
 
       const data = await response.text();
 
-      if (response.status !== 200) {
+      if (response.status < 200 || response.status >= 300) {
         showError(data || "UNKNOWN");
         btn.removeAttribute("disabled");
       } else {
@@ -154,10 +165,6 @@ function setupSubmitButton(startDate, endpoint) {
 
 function checkboxIsChecked() {
   return document.querySelector(".confirm_checkbox input").checked;
-}
-
-function countdownIsReady(date) {
-  return new Date(date).valueOf() < Date.now();
 }
 
 function showSuccess(data) {

@@ -133,7 +133,7 @@ function setupOptions(selector, options, lang) {
     }></input>
       <span>${option[lang].label}</span>
     </label>
-    <button class="help-toggle-button">?</button>
+    <button class="help-toggle-button" tabindex="-1">?</button>
     <p class="helptext">${option[lang].description}</p>
     `;
 
@@ -174,7 +174,7 @@ function setupPackages(tiers, packages, lang) {
       </label>
     </td>
     ${package.price.map(price => `<td>${price}</td>`).join("")}
-    <td><button class="help-toggle-button table-help">?</button></td>
+    <td><button class="help-toggle-button table-help" tabindex="-1">?</button></td>
     </tr>
     <div class="helptext-container"><div class="helptext">${
       package[lang].description
@@ -212,6 +212,9 @@ function isValid(element, value) {
       return value.length >= 1 && value.length <= 20;
     case "state":
       return value.length >= 0 && value.length <= 80;
+    case "country":
+    case "country_badge":
+      return value !== "none";
     case "email":
       return value.length >= 1 && value.length <= 200;
     case "email_repeat":
