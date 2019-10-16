@@ -71,9 +71,9 @@ async function loadTime(config) {
 }
 
 function formatRemaining(milliseconds) {
-  var minutes = Math.floor(milliseconds / 60 / 1000);
-  var seconds = Math.floor((milliseconds / 1000) % 60);
-  var ms = Math.floor((milliseconds % 1000) / 10);
+  const minutes = Math.floor(milliseconds / 60 / 1000);
+  const seconds = Math.floor((milliseconds / 1000) % 60);
+  const ms = Math.floor((milliseconds % 1000) / 10);
   if (!minutes) {
     return leftPad(seconds) + ":" + leftPad(ms);
   } else {

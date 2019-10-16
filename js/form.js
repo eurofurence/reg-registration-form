@@ -261,7 +261,7 @@ function restoreForm() {
 
 function updateSubmitButtonState() {
   const elements = document.querySelectorAll("[data-field]");
-  for (var i = 0; i < elements.length; i++) {
+  for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
     if (!isValid(element.getAttribute("data-field"), element.value)) {
       return document
