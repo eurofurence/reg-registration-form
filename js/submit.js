@@ -91,9 +91,10 @@ function setupPackages(packages, lang) {
     data = JSON.parse(data);
     const container = document.getElementById("packages");
 
-    packages.forEach(package => {
-      if (data["packages:" + package.code]) {
-        container.innerHTML += `<span>${package[lang].label}</span>`;
+    //package is a reserved word and might result in broken code in newer JS versions
+    packages.forEach(pack => {
+      if (data["packages:" + pack.code]) {
+        container.innerHTML += `<span>${pack[lang].label}</span>`;
       }
     });
   }
