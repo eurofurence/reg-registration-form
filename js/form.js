@@ -128,9 +128,9 @@ function setupOptions(selector, options, lang) {
   options.forEach(option => {
     const entry = document.createElement("div");
     entry.innerHTML = `<label>
-    <input type="checkbox" data-field="${selector}:${option.code}"${
+    <input type="checkbox" data-field="${selector}:${option.code}" ${
       option.default ? " checked" : ""
-    }></input>
+    }/>
       <span>${option[lang].label}</span>
     </label>
     <button class="help-toggle-button" tabindex="-1">?</button>
@@ -164,20 +164,20 @@ function setupPackages(tiers, packages, lang) {
   const body = document.createElement("tbody");
   body.innerHTML = packages
     .map(
-      package => `<tr>
+      pack => `<tr>
     <td>
       <label>
-      <input type="checkbox" data-field="packages:${package.code}"${
-        package.default ? " checked" : ""
-      }></input>
-      <span>${package[lang].label}</span>
+      <input type="checkbox" data-field="packages:${pack.code}" ${
+        pack.default ? " checked" : ""
+      }/>
+      <span>${pack[lang].label}</span>
       </label>
     </td>
-    ${package.price.map(price => `<td>${price}</td>`).join("")}
+    ${pack.price.map(price => `<td>${price}</td>`).join("")}
     <td><button class="help-toggle-button table-help" tabindex="-1">?</button></td>
     </tr>
     <div class="helptext-container"><div class="helptext">${
-      package[lang].description
+      pack[lang].description
     }</div></div>`
     )
     .join("");
