@@ -443,5 +443,6 @@
   ],
   "imprint": "http://example.com/imprint.html",
   "privacy": "http://example.com/privacy.html",
+  "telegramVisible": true,
   "partnerVisible": true
 }
