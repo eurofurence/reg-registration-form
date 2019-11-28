@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupCountries(config.availableCountries, lang);
   setupTShirts(config.tShirt, lang);
   setupPartner(config.partnerVisible);
+  setupTelegram(config.telegramVisible);
   setupOptions(config.flags, config.options, lang);
   setupPackages(config.packages, lang);
   setupBirthday();
@@ -46,6 +47,13 @@ function setupTShirts(tshirts, lang) {
 function setupPartner(visible) {
   if (!visible) {
     const element = document.getElementById("partner");
+    element.parentNode.removeChild(element);
+  }
+}
+
+function setupTelegram(visible) {
+  if (!visible) {
+    const element = document.getElementById("telegram");
     element.parentNode.removeChild(element);
   }
 }
@@ -125,6 +133,13 @@ function setupSubmitButton(endpoint) {
   btn.addEventListener("click", async () => {
     let timeResponse, time;
 
+    // hide all error messages
+    document
+      .querySelectorAll(
+        "#validation-error,#success-response,#generic-error,#server-error"
+      )
+      .forEach(element => element.classList.add("hidden"));
+
     try {
       timeResponse = await fetch(config.timeServer);
       time = await timeResponse.json();
@@ -149,16 +164,19 @@ function setupSubmitButton(endpoint) {
         headers: { "Content-Type": "application/json" }
       });
 
-      const data = await response.text();
-
-      if (response.status < 200 || response.status >= 300) {
-        showError(data || "UNKNOWN");
-        btn.removeAttribute("disabled");
+      if (response.status === 201) {
+        showSuccess(
+          response.headers
+            .get("Location")
+            .split("/")
+            .pop()
+        );
       } else {
-        showSuccess(data);
+        showServerError(await response.json());
+        btn.removeAttribute("disabled");
       }
     } catch (e) {
-      showError(e);
+      showGenericError(e);
       btn.removeAttribute("disabled");
     }
   });
@@ -168,18 +186,37 @@ function checkboxIsChecked() {
   return document.querySelector(".confirm_checkbox input").checked;
 }
 
-function showSuccess(data) {
-  const element = document.querySelector("#submit-response");
+function showError(data) {
+  const element = document.querySelector("#validation-error");
 
-  element.classList.remove("error");
-  element.textContent = translate("SUCCESS") + data;
+  element.classList.remove("hidden");
+  element.textContent = translate("ERROR_" + data);
 }
 
-function showError(data) {
-  const element = document.querySelector("#submit-response");
+function showServerError(error) {
+  const element = document.querySelector("#server-error");
 
-  element.classList.add("error");
-  element.textContent = translate("ERROR_" + data);
+  element.classList.remove("hidden");
+  element.querySelector("#server_error").textContent = JSON.stringify(
+    error,
+    null,
+    2
+  );
+}
+
+function showSuccess(data) {
+  const element = document.querySelector("#success-response");
+
+  element.classList.remove("hidden");
+  element.querySelector("#reg_number").textContent = data;
+}
+
+function showGenericError(data) {
+  const element = document.querySelector("#generic-error");
+
+  element.classList.remove("hidden");
+  element.querySelector("#generic_error").textContent =
+    data.name + ": " + data.message;
 }
 
 function getPayload() {
@@ -244,6 +281,9 @@ function isValid(element, value) {
       return value.length >= 1 && value.length <= 20;
     case "state":
       return value.length >= 0 && value.length <= 80;
+    case "country":
+    case "country_badge":
+      return value !== "none";
     case "email":
       return value.length >= 1 && value.length <= 200;
     case "email_repeat":
@@ -252,6 +292,8 @@ function isValid(element, value) {
       return value.length >= 1 && value.length <= 32;
     case "birthday":
       return /^\d{4}-([0]\d|1[0-2])-([0-2]\d|3[01])$/.test(value);
+    case "telegram":
+      return !value.length || value.charAt(0) === "@";
   }
 
   return true;

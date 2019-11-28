@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupCountries(config.availableCountries, lang);
   setupTShirts(config.tShirt, lang);
   setupPartner(config.partnerVisible);
+  setupTelegram(config.telegramVisible);
   setupOptions("flags", config.flags, lang);
   setupOptions("options", config.options, lang);
   setupPackages(config.tiers, config.packages, lang);
@@ -119,6 +120,13 @@ function setupTShirts(tshirts, lang) {
 function setupPartner(visible) {
   if (!visible) {
     const element = document.getElementById("partner");
+    element.parentNode.removeChild(element);
+  }
+}
+
+function setupTelegram(visible) {
+  if (!visible) {
+    const element = document.getElementById("telegram");
     element.parentNode.removeChild(element);
   }
 }
@@ -223,6 +231,8 @@ function isValid(element, value) {
       return value.length >= 1 && value.length <= 32;
     case "birthday":
       return /^\d{4}-([0]\d|1[0-2])-([0-2]\d|3[01])$/.test(value);
+    case "telegram":
+      return !value.length || value.charAt(0) === "@";
   }
 
   return true;

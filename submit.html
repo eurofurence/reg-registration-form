@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/submit.css" />
+    <meta charset="utf-8" />
   </head>
   <body>
     <noscript>
@@ -35,11 +36,10 @@
         </div>
         <div>
           <span data-content="ZIP"></span>
-          <span data-field="zip"></span>
-        </div>
-        <div>
-          <span data-content="CITY"></span>
-          <span data-field="city"></span>
+          <span>
+            <span data-field="zip"></span>
+            <span data-field="city"></span>
+          </span>
         </div>
         <div>
           <span data-content="COUNTRY"></span>
@@ -79,6 +79,10 @@
         <div id="partner">
           <span data-content="PARTNER"></span>
           <span data-field="partner"></span>
+        </div>
+        <div id="telegram">
+          <span data-content="TELEGRAM"></span>
+          <span data-field="telegram"></span>
         </div>
       </fieldset>
       <fieldset>
@@ -126,7 +130,23 @@
           disabled
           class="activate-after-countdown"
         ></button>
-        <p id="submit-response"></p>
+        <p id="validation-error" class="hidden"></p>
+        <div id="success-response" class="hidden">
+          <h3 data-content="SUCCESS"></h3>
+          <p data-content="REG_NUMBER"></p>
+          <h2 id="reg_number"></h2>
+          <p data-content="SUCCESS_EMAIL"></p>
+        </div>
+        <div id="generic-error" class="hidden">
+          <h3 data-content="ERROR"></h3>
+          <p data-content="GENERIC_ERROR"></p>
+          <pre id="generic_error"></pre>
+        </div>
+        <div id="server-error" class="hidden">
+          <h3 data-content="ERROR"></h3>
+          <p data-content="SERVER_ERROR"></p>
+          <pre id="server_error"></pre>
+        </div>
       </div>
       <div data-snippet="submit-post"></div>
     </div>

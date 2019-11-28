@@ -63,3 +63,17 @@ table tbody tr td:first-child {
   vertical-align: middle;
   width: 95%;
 }
+
+.hidden {
+  display: none;
+}
+
+#server-error pre {
+  text-align: left;
+}
+
+pre {
+  border: 1px solid lightgray;
+  background-color: white;
+  padding: 1em;
+}

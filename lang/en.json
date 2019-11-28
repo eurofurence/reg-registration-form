@@ -48,6 +48,8 @@
   "GENDER_HELP": "This information is collected for statistical purposes. If you do not wish to provide us with this information, simply select \"don't wish to say\".",
   "PARTNER": "Significant Other",
   "PARTNER_HELP": "Significant Other",
+  "TELEGRAM": "Telegram",
+  "TELEGRAM_HELP": "Your Telegram handle, starting with the @",
   "MEMBERSHIP_PACKAGES": "Membership Packages",
   "OPTIONAL_INFORMATION": "Optional Information",
   "TSHIRT_SIZE": "T-Shirt size",
@@ -80,5 +82,10 @@
   "ERROR_UNKNOWN": "An unknown error occurred. Please try again.",
   "LEGAL_NOTICE": "Legal Notice: ",
   "LEGAL_NOTICE_TEXT": "By submitting your registration you ask Eurofurence e.V. to offer you a place at EF. The actual contract offer is made when we accept your registration and e-mail you the payment details, which you can then accept by sending your payment.",
-  "SUCCESS": "Submission Successful! You will receive an email with a confirmation link. Please note that it takes at least 30 minuted for the Email to arrive. Your registration number is: "
+  "SUCCESS": "Submission Successful!",
+  "REG_NUMBER": "Your registration number is",
+  "SUCCESS_EMAIL": "You will receive an email with a confirmation link. Please note that it takes at least 30 minutes for the Email to arrive.",
+  "ERROR": "Someting went wrong!",
+  "GENERIC_ERROR": "There was an error while submitting the registration or processing the server response:",
+  "SERVER_ERROR": "The server was unable to process the registration. Please contact us with the following information:"
 }
