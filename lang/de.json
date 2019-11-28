@@ -21,7 +21,7 @@
   "HEADER_SUMMARY": "Zusammenfassung",
   "NAME_ADDRESS": "Name & Addresse",
   "NICKNAME": "Nickname",
-  "NICKNAME_HELP": "This is your nickname or \"fan name\". It will be printed on your name badge, and it will double as your login name.<br><br>This field is mandatory, which means it <b>must</b> be filled in.<br><br>Your nickname will end up on your name badge in HUGE letters, and it is usually the name people are going to address you with. If you don't have one, simply put in your first name, or anything else you would like to be adressed with.<br><br>To avoid ascii art or other unpronounceable nicknames, there is now a rule that your nickname must at least contain two letters and may not contain more than two non-alphabetical symbols.",
+  "NICKNAME_HELP": "Dies ist dein Nickname, Spitzname oder \"Fan Name\". Er wird auf deinem \"Badge\" (Convention Ausweis) stehen und ebenfalls dein Login Name sein.<br><br>Dieses Feld ist erforderlich. Das bedeuted, dass es ausgefüllt werden <b>muss</b>.<br><br>Dein Nickname wird in großen Buchstaben auf deinem Badge stehen und ist, normalerweise, der Name, mit dem dich Leute ansprechen werden. Falls du keinen haben solltest, nimm einfach deinen Vornamen oder ein Name mit dem du angesprochen werden möchtest.<br><br>Um zu verhindern, dass unaussprechliche Namen gewählt werden, gibt es nun die Regel, dass der Nickname mindestens zwei Buchstaben beinhalten muss und nicht mehr als zwei nicht-alphanumerische Zeichen (nicht A-Z und 0-9) beinhalten darf.",
   "FIRST_NAME": "Vorname",
   "FIRST_NAME_HELP": "Fill in your legal first name here precisely as it's shown on your ID or passport.<br><br>This field is mandatory, which means it <b>must</b> be filled in.<br><br>Your legal name will not be printed on your badge, and it will not be shown in the list of sponsors or supersponsors, but for purposes of communication with the hotel and for insurance and security purposes we still need this information.<br><br>Your ID will be checked when you arrive at the convention.<br><br>Middle names may be omitted, so if your name is \"Jean Claude Baptiste\" then it's fine to just enter \"Jean\".",
   "LAST_NAME": "Nachname",
@@ -82,6 +82,7 @@
   "ERROR_UNKNOWN": "An unknown error occured. Please try again.",
   "LEGAL_NOTICE": "Legal Notice: ",
   "LEGAL_NOTICE_TEXT": "By submitting your registration you ask Eurofurence e.V. to offer you a place at EF. The actual contract offer is made when we accept your registration and e-mail you the payment details, which you can then accept by sending your payment.",
+  
   "SUCCESS": "Registration Erfolgreich!",
   "REG_NUMBER": "Deine Registrations-Nummer ist",
   "SUCCESS_EMAIL": "Du erhälst eine Email mit einem Bestätigungslink. Bitte beachte das es mindestens 30 Minuten dauern kann, bis die Email ankommt.",

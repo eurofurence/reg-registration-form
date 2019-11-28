@@ -29,9 +29,8 @@ async function resolveSnippets() {
     const snippetName = elements[i].getAttribute("data-snippet");
 
     const snippetResponse = await fetch("snippets/" + snippetName + ".html");
-    const snippetHtml = await snippetResponse.text();
-
-    elements[i].innerHTML = snippetHtml;
+    
+    elements[i].innerHTML = await snippetResponse.text();
   }
 }
 
