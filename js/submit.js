@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupBirthday();
   setupGender();
 
-  setupSubmitButton(config.apiEndpoint);
+  setupSubmitButton(config.timeServer, config.apiEndpoint);
 });
 
 function setupCountries(countries, lang) {
@@ -125,7 +125,7 @@ function restoreForm() {
   }
 }
 
-function setupSubmitButton(endpoint) {
+function setupSubmitButton(timeServer, endpoint) {
   const btn = document.querySelector('button[data-content="SUBMIT"]');
 
   const payload = JSON.stringify(getPayload());
@@ -141,7 +141,7 @@ function setupSubmitButton(endpoint) {
       .forEach(element => element.classList.add("hidden"));
 
     try {
-      timeResponse = await fetch(config.timeServer);
+      timeResponse = await fetch(timeServer);
       time = await timeResponse.json();
     } catch (e) {
       return showError("TIMESERVER");
