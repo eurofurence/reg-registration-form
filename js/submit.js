@@ -140,6 +140,12 @@ function setupSubmitButton(timeServer, endpoint) {
       )
       .forEach(element => element.classList.add("hidden"));
 
+    if (!formValid()) {
+      return showError("INVALID");
+    }
+    if (!checkboxIsChecked()) {
+      return showError("CHECKBOX");
+    }
     try {
       timeResponse = await fetch(timeServer);
       time = await timeResponse.json();
@@ -147,14 +153,8 @@ function setupSubmitButton(timeServer, endpoint) {
       return showError("TIMESERVER");
     }
 
-    if (!checkboxIsChecked()) {
-      return showError("CHECKBOX");
-    }
     if (time.countdown > 0) {
       return showError("COUNTDOWN");
-    }
-    if (!formValid()) {
-      return showError("INVALID");
     }
     btn.setAttribute("disabled", true);
     try {
