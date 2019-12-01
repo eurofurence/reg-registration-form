@@ -241,6 +241,14 @@ function aggregate(type, data) {
     .map(key => key.split(":")[1])
     .join(",");
 
+  if (type === "packages") {
+    if (data[type]) {
+      data[type] += ",room-none";
+    } else {
+      data[type] += "room-none";
+    }
+  }
+
   Object.keys(data).forEach(key => {
     if (key.indexOf(":") !== -1 && key.split(":")[0] === type) {
       delete data[key];
