@@ -19,7 +19,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupBirthday();
   setupGender();
 
-  setupSubmitButton(config.timeServer, config.apiEndpoint);
+  const previousReg = localStorage.getItem("regSuccess");
+  if (previousReg) {
+    showSuccess(previousReg, true);
+  } else {
+    setupSubmitButton(config.timeServer, config.apiEndpoint);
+  }
 });
 
 function setupCountries(countries, lang) {
@@ -204,7 +209,24 @@ function showServerError(error) {
   );
 }
 
-function showSuccess(data) {
+function showSuccess(data, noSubmit) {
+  const btn = document.querySelector('button[data-content="SUBMIT"]');
+  // prevent submit button to be enabled by the countdown
+  btn.setAttribute("class", "");
+  // disable submit button
+  btn.setAttribute("disabled", true);
+
+  // remove Edit Registration link
+  document.body.classList.add("no-edit");
+
+  if (noSubmit) {
+    document.body.classList.add("no-submit");
+  }
+
+  // store regnumber in localstorage
+  localStorage.setItem("regSuccess", data);
+
+  // show success message
   const element = document.querySelector("#success-response");
 
   element.classList.remove("hidden");

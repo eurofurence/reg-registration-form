@@ -82,11 +82,11 @@
   "ERROR_UNKNOWN": "An unknown error occured. Please try again.",
   "LEGAL_NOTICE": "Legal Notice: ",
   "LEGAL_NOTICE_TEXT": "By submitting your registration you ask Eurofurence e.V. to offer you a place at EF. The actual contract offer is made when we accept your registration and e-mail you the payment details, which you can then accept by sending your payment.",
-  
   "SUCCESS": "Registration Erfolgreich!",
   "REG_NUMBER": "Deine Registrations-Nummer ist",
   "SUCCESS_EMAIL": "Du erhälst eine Email mit einem Bestätigungslink. Bitte beachte das es mindestens 30 Minuten dauern kann, bis die Email ankommt.",
   "ERROR": "Da lief etwas schief!",
   "GENERIC_ERROR": "Es gab einen Fehler beim Abschicken der Registration oder beim verarbeiten der Antwort:",
-  "SERVER_ERROR": "Der Registrations-Server konnte die Anfrage nicht bearbeiten. Bitte schicke uns die folgenden Informationen:"
+  "SERVER_ERROR": "Der Registrations-Server konnte die Anfrage nicht bearbeiten. Bitte schicke uns die folgenden Informationen:",
+  "CREATE_ANOTHER": "Weitere Registrierung erstellen"
 }

@@ -79,7 +79,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupPackages(config.tiers, config.packages, lang);
   setupBirthday(config.birthdayLimits);
 
-  restoreForm();
+  const previousReg = localStorage.getItem("regSuccess");
+  if (previousReg) {
+    localStorage.removeItem("regFormData");
+    localStorage.removeItem("regSuccess");
+  } else {
+    restoreForm();
+  }
 });
 
 function setupCountries(countries, lang) {

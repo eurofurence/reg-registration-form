@@ -87,5 +87,6 @@
   "SUCCESS_EMAIL": "You will receive an email with a confirmation link. Please note that it takes at least 30 minutes for the Email to arrive.",
   "ERROR": "Someting went wrong!",
   "GENERIC_ERROR": "There was an error while submitting the registration or processing the server response:",
-  "SERVER_ERROR": "The server was unable to process the registration. Please contact us with the following information:"
+  "SERVER_ERROR": "The server was unable to process the registration. Please contact us with the following information:",
+  "CREATE_ANOTHER": "Create another registration"
 }
