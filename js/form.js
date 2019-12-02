@@ -29,6 +29,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   const configResponse = await fetch("./config.json");
   const config = await configResponse.json();
 
+  document.addEventListener("focusout", evt => {
+    const field = evt.target.getAttribute("data-field");
+    if (field) {
+      if (isValid(field, evt.target.value)) {
+        evt.target.classList.remove("invalid");
+      } else {
+        evt.target.classList.add("invalid");
+      }
+    }
+  });
+
   document.addEventListener("change", evt => {
     const field = evt.target.getAttribute("data-field");
     if (field) {
