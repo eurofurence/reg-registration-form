@@ -326,17 +326,17 @@
     "ZW": { "en": "Zimbabwe", "de": "Simbabwe" }
   },
   "birthdayLimits": {
-    "youngest": "2001-01-01",
-    "oldest": "1950-01-01"
+    "youngest": "2002-08-19",
+    "oldest": "1901-01-01"
   },
   "timeServer": "http://example.com/time/",
   "apiEndpoint": "http://localhost:8080/registration/new",
   "flags": [
     {
       "code": "anon",
-      "default": true,
+      "default": false,
       "en": {
-        "label": "Legal Name is confidential",
+        "label": "Legal Name is Confidential",
         "description": "Some description for that"
       },
       "de": {
@@ -355,35 +355,83 @@
         "label": "Mitglied des Eurofurence e.V.",
         "description": "Diesmal ungechecked"
       }
+    },
+    {
+      "code": "hc",
+      "default": false,
+      "en": {
+        "label": "Wheelchair",
+        "description": "Testing an unchecked checkbox"
+      },
+      "de": {
+        "label": "Rollstuhl",
+        "description": "Diesmal ungechecked"
+      }
     }
   ],
   "tiers": [
     {
       "en": {
         "label": "Early Bird",
-        "description": "until 1st of May"
+        "description": "until before 1st of February"
       },
       "de": {
         "label": "Frühbucher",
-        "description": "bis 1. Mai"
+        "description": "bis vor dem 1. Februar"
       }
     },
     {
       "en": {
         "label": "Regular",
-        "description": "after 1st of May"
+        "description": "until before 1st of April"
       },
       "de": {
         "label": "Normal",
+        "description": "bis vor dem 1. April"
+      }
+    },
+    {
+      "en": {
+        "label": "Late",
+        "description": "after 1st of May"
+      },
+      "de": {
+        "label": "Spätbucher",
         "description": "nach 1. Mai"
       }
     }
   ],
   "packages": [
     {
+      "code": "attendance",
+      "default": true,
+      "price": ["90€", "100€", "125€"],
+      "en": {
+        "label": "Entrance Fee (Convention Ticket)",
+        "description": "Basic entrance fee!"
+      },
+      "de": {
+        "label": "Convention Ticket",
+        "description": "Die Basis-Eingangskarte!"
+      }
+    },
+    {
+      "code": "stage",
+      "default": true,
+      "price": ["5€", "5€", "5€"],
+      "en": {
+        "label": "Entrance Fee (Stage Ticket)",
+        "description": "Access to all stage shows!"
+      },
+      "de": {
+        "label": "Bühnenticket",
+        "description": "Zugang zur Mainstage!"
+      }
+    },
+    {
       "code": "sponsor",
       "default": true,
-      "price": ["10€", "15€"],
+      "price": ["65€", "65€", "65€"],
       "en": {
         "label": "Sponsor Upgrade",
         "description": "Support the Convention!"
@@ -396,7 +444,7 @@
     {
       "code": "sponsor2",
       "default": false,
-      "price": ["10.01€", "15.05€"],
+      "price": ["160€", "160€", "160€"],
       "en": {
         "label": "Supersponsor Upgrade",
         "description": "Support the Convention even more!"
@@ -436,13 +484,17 @@
   ],
   "tShirt": [
     { "code": "", "en": "No TShirt", "de": "Kein TShirt" },
+    { "code": "XS", "en": "Extra Small", "de": "Extra Klein" },
     { "code": "S", "en": "Small", "de": "Klein" },
     { "code": "M", "en": "Medium", "de": "Mittel" },
     { "code": "L", "en": "Large", "de": "Groß" },
-    { "code": "XL", "en": "Extra Large", "de": "Extra Groß" }
+    { "code": "XL", "en": "Extra Large", "de": "Extra Groß" },
+    { "code": "XXL", "en": "XXL", "de": "XXL" },
+    { "code": "XXXL", "en": "XXXL", "de": "XXXL" },
+    { "code": "XXXXL", "en": "XXXXL", "de": "XXXXL" }
   ],
-  "imprint": "http://example.com/imprint.html",
-  "privacy": "http://example.com/privacy.html",
+  "imprint": "https://help.eurofurence.org/legal/imprint",
+  "privacy": "https://help.eurofurence.org/legal/privacy",
   "telegramVisible": true,
-  "partnerVisible": true
+  "partnerVisible": false
 }
