@@ -337,11 +337,11 @@
       "default": false,
       "en": {
         "label": "Legal Name is Confidential",
-        "description": "Some description for that"
+        "description": "If you do not want your legal name to show up in any Eurofurence related media, please check this. You will then only be referred to by your Nickname."
       },
       "de": {
-        "label": "Realname is geheim",
-        "description": "Irgendeine Beschreibung"
+        "label": "Vor- und Nachname vertraulich",
+        "description": "Wenn Du nicht möchtest, dass Eurofurence deinen Vor- und Nachnamen in irgend einer Weise für andere Personen erkenntlich verwendet, dann hake dieses Feld an."
       }
     },
     {
@@ -349,11 +349,11 @@
       "default": false,
       "en": {
         "label": "Member of Eurofurence e.V.",
-        "description": "Testing an unchecked checkbox"
+        "description": "Eurofurence e.V. is a registered social organisation, and the incorporated entity which runs the convention. If you're not a member of the organisation, or if you still have no clue what we are talking about, please disregard this checkbox.<br/><br/>All members of the organisation should check this box."
       },
       "de": {
         "label": "Mitglied des Eurofurence e.V.",
-        "description": "Diesmal ungechecked"
+        "description": "Wenn Du Mitglied des Eurofurence e.V. bist, dann hake dieses Feld an."
       }
     },
     {
@@ -361,11 +361,11 @@
       "default": false,
       "en": {
         "label": "Wheelchair",
-        "description": "Testing an unchecked checkbox"
+        "description": "If you are in any kind of condition that forces you to use a wheelchair, please let us know by checking this option."
       },
       "de": {
         "label": "Rollstuhl",
-        "description": "Diesmal ungechecked"
+        "description": "Solltest Du an einen Rollstuhl gebunden sein, so lasse uns dies bitte wissen."
       }
     }
   ],
@@ -393,11 +393,11 @@
     {
       "en": {
         "label": "Late",
-        "description": "after 1st of May"
+        "description": "after 1st of April"
       },
       "de": {
         "label": "Spätbucher",
-        "description": "nach 1. Mai"
+        "description": "nach 1. April"
       }
     }
   ],
@@ -407,12 +407,12 @@
       "default": true,
       "price": ["90€", "100€", "125€"],
       "en": {
-        "label": "Entrance Fee (Convention Ticket)",
-        "description": "Basic entrance fee!"
+        "label": "Entrance Fee",
+        "description": "The Convention Ticket entitles you to attend the convention from Wednesday to Sunday. It includes a con badge, a program book, and the right to take part in all scheduled events except sponsor-only events (which require an additional sponsor or super-sponsor upgrade), some charity events (which may require a donation to the charity), and the stage track (which requires the additional Stage Ticket).<br/><br/>Hotel rooms at the reduced convention rate are only available to holders of a Convention Ticket, but are NOT included in it."
       },
       "de": {
         "label": "Convention Ticket",
-        "description": "Die Basis-Eingangskarte!"
+        "description": "Dieses Ticker berechtigt Dich zur Teilname an Eurofurence, inkl. Badge, Conbook und Teilnahme an allen Events außer Sponsorenevents (Sponsor- oder Supersponsor-Upgrade erforderlich), einigen Charity-Events (Spende erforderlich) und den Bühnenevents (Bühnenticket erforderlich).<br/><br/>Hotelzimmer zu der reduzierten Conventionrate erfordern ein Convention Ticket, sind darin aber NICHT inklusive."
       }
     },
     {
@@ -420,12 +420,12 @@
       "default": true,
       "price": ["5€", "5€", "5€"],
       "en": {
-        "label": "Entrance Fee (Stage Ticket)",
-        "description": "Access to all stage shows!"
+        "label": "Stage Ticket",
+        "description": "The Stage Ticket will give you access to the stage events from Thursday to Saturday.<br/><br/>Note that the Stage Ticket is not sold separately, our stage track is only available to attendees of the convention."
       },
       "de": {
         "label": "Bühnenticket",
-        "description": "Zugang zur Mainstage!"
+        "description": "Zugang zu den Bühnenevents!<br/><br/>Bitte beachte, dass das Bühnenticket nicht separat verkauft wird, es ist nur zusammen mit dem Convention Ticket erhältlich."
       }
     },
     {
@@ -434,11 +434,11 @@
       "price": ["65€", "65€", "65€"],
       "en": {
         "label": "Sponsor Upgrade",
-        "description": "Support the Convention!"
+        "description": "If you want to support Eurofurence with a voluntary donation, you can become a sponsor. There will be some benefits, but they are not really the point of doing this."
       },
       "de": {
         "label": "Sponsor Upgrade",
-        "description": "Unterstütze die Convention!"
+        "description": "Unterstütze die Convention mit einer freiwilligen Spende. Du erhältst ein kleines Dankeschön, aber darum geht es beim Sponsor nicht wirklich."
       }
     },
     {
@@ -447,11 +447,11 @@
       "price": ["160€", "160€", "160€"],
       "en": {
         "label": "Supersponsor Upgrade",
-        "description": "Support the Convention even more!"
+        "description": "If you want to support Eurofurence with an even larger voluntary donation, you can become a super sponsor. There will be some benefits, but they are not really the point of doing this."
       },
       "de": {
         "label": "Supersponsor Upgrade",
-        "description": "Unterstütze die Convention noch mehr!"
+        "description": "Unterstütze die Convention mit einer noch größeren freiwilligen Spende. Du erhältst ein kleines Dankeschön, aber darum geht es beim Supersponsor nicht wirklich."
       }
     }
   ],
@@ -462,11 +462,35 @@
       "default": true,
       "en": {
         "label": "Artist",
-        "description": "Are you an artist?"
+        "description": "Are you an artist? By checking this box, you let us know that you are interested in information for artists. You will be notified if there are any special artist events and we might send you announcements that we find especially interesting for artists."
       },
       "de": {
         "label": "Künstler",
-        "description": "Bist du ein Künstler?"
+        "description": "Bist du ein Künstler? Wenn du zeichnest oder Interesse am Zeichnen hast, so hake dieses Feld an. Wir werden dich über Events und Angebote zum Thema informieren."
+      }
+    },
+    {
+      "code": "anim",
+      "default": true,
+      "en": {
+        "label": "Animator",
+        "description": "Are you an animator? By checking this box, you let us know that you are interested in information for people interested in the art of animation. You will be notified if there are any special animation-related events and we might send you announcements that we find especially interesting for everyone interested in animation."
+      },
+      "de": {
+        "label": "Animator",
+        "description": "Bist du ein Animator? Wenn du dich für Animation interessiert, hake dieses Feld an. Wir werden dich über Events und Angebote zum Thema Animation informieren."
+      }
+    },
+    {
+      "code": "music",
+      "default": true,
+      "en": {
+        "label": "Musician",
+        "description": "Are you a musician? By checking this box, you let us know that you are interested in information for musicians. You will be notified if there are any special musicial events and we might send you announcements that we find especially interesting for musicians."
+      },
+      "de": {
+        "label": "Musiker",
+        "description": "Bist du ein Musiker? Wenn du ein Instrument spielst oder dich für Musik im Fandom interessierst, so hake dieses Feld an. Wir werden dich über Events und Angebote zum Thema Musik informieren."
       }
     },
     {
@@ -474,11 +498,11 @@
       "default": false,
       "en": {
         "label": "Fursuiter",
-        "description": "Cute and Fluffy"
+        "description": "By checking this box, you let us know that you are interested in information for fursuiters. You will be notified if there are any special fursuiting events and we might send you announcements that we find especially interesting for fursuiters."
       },
       "de": {
         "label": "Fursuiter",
-        "description": "Süß und Flauschig"
+        "description": "Wenn du einen Fursuit besitzt oder dich fürs Fursuiten interessierst, so hake dieses Feld an. Wir werden dich über Events und Angebote zum Thema Fursuit informieren."
       }
     }
   ],
