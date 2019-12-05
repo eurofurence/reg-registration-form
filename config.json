@@ -328,8 +328,8 @@
     "youngest": "2002-08-19",
     "oldest": "1901-01-01"
   },
-  "timeServer": "http://example.com/time/",
-  "apiEndpoint": "http://localhost:8080/registration/new",
+  "timeServer": "http://localhost:9091/api/rest/v1/countdown",
+  "apiEndpoint": "http://localhost:9091/api/rest/v1/attendees",
   "flags": [
     {
       "code": "anon",
