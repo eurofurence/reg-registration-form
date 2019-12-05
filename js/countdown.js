@@ -16,6 +16,12 @@ async function loadTime(config) {
   try {
     timeResponse = await fetch(config.timeServer);
     time = await timeResponse.json();
+
+    // only show the 'get started' button, if the timeserver is ok (and thus javascript is working)
+    const elements = document.querySelectorAll(".unhide-if-timeserver-ok");
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].classList.remove("hidden");
+    }
   } catch (e) {
     longText.classList.add("hidden");
     shortText.classList.add("hidden");
