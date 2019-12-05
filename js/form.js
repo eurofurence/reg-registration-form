@@ -7,8 +7,8 @@ document.addEventListener("click", evt => {
 
   if (target.classList.contains("help-toggle-button")) {
     if (target.classList.contains("table-help")) {
-      target.parentNode.parentNode.nextElementSibling.classList.toggle(
-        "expanded"
+      target.parentNode.parentNode.nextElementSibling.children[1].children[0].classList.toggle(
+           "expanded"
       );
     } else {
       target.parentNode.classList.toggle("expanded");
@@ -201,9 +201,13 @@ function setupPackages(tiers, packages, lang) {
     ${pack.price.map(price => `<td>${price}</td>`).join("")}
     <td><button class="help-toggle-button table-help" tabindex="-1">?</button></td>
     </tr>
-    <div class="helptext-container"><div class="helptext">${
-      pack[lang].description
-    }</div></div>`
+    <tr>
+      <td></td>
+      <td colspan="3"><div class="helptext-container"><div class="helptext">${
+          pack[lang].description
+        }</div></div></td>
+      <td></td>
+    </tr>`
     )
     .join("");
   table.appendChild(body);
