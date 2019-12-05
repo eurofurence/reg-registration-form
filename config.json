@@ -1,8 +1,7 @@
 {
   "defaultLanguage": "en",
   "availableLanguages": {
-    "en": "English",
-    "de": "Deutsch"
+    "en": "English"
   },
   "availableCountries": {
     "none": { "en": "- Please Select -", "de": "- Bitte Auswählen -" },
