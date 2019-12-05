@@ -247,7 +247,7 @@ function isValid(element, value) {
     case "email":
       return value.length >= 1 && value.length <= 200;
     case "email_repeat":
-      return value === document.querySelector('[data-field="email"]').value;
+      return value.length >= 1 && value.length <= 200 && value === document.querySelector('[data-field="email"]').value;
     case "phone":
       return value.length >= 1 && value.length <= 32;
     case "birthday":
