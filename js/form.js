@@ -153,7 +153,7 @@ function setupOptions(selector, options, lang) {
   options.forEach(option => {
     const entry = document.createElement("div");
     entry.innerHTML = `<label>
-    <input type="checkbox" data-field="${selector}:${option.code}" ${
+    <input type="checkbox" id="${selector}-${option.code}-field" data-field="${selector}:${option.code}" ${
       option.default ? " checked" : ""
     }/>
       <span>${option[lang].label}</span>
@@ -192,7 +192,7 @@ function setupPackages(tiers, packages, lang) {
       pack => `<tr>
     <td>
       <label>
-      <input type="checkbox" data-field="packages:${pack.code}" ${
+      <input type="checkbox" id="packages-${pack.code}-field" data-field="packages:${pack.code}" ${
         pack.default ? " checked" : ""
       }/>
       <span>${pack[lang].label}</span>
