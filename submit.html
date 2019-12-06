@@ -20,57 +20,58 @@
         <legend data-content="PERSONAL_INFORMATION"></legend>
         <div>
           <span data-content="NICKNAME"></span>
-          <span data-field="nickname"></span>
+          <span id="nickname-field" data-field="nickname"></span>
         </div>
         <div>
           <span data-content="FIRST_NAME"></span>
-          <span data-field="first_name"></span>
+          <span id="first-name-field" data-field="first_name"></span>
         </div>
         <div>
           <span data-content="LAST_NAME"></span>
-          <span data-field="last_name"></span>
+          <span id="last-name-field" data-field="last_name"></span>
         </div>
         <div>
           <span data-content="STREET"></span>
-          <span data-field="street"></span>
+          <span id="street-field" data-field="street"></span>
         </div>
         <div>
           <span data-content="ZIP"></span>
           <span>
-            <span data-field="zip"></span>
-            <span data-field="city"></span>
+            <span id="zip-field" data-field="zip"></span>
+            <span id="city-field" data-field="city"></span>
           </span>
         </div>
         <div>
           <span data-content="COUNTRY"></span>
-          <span data-field="country"> </span>
+          <span id="country-field" data-field="country"> </span>
         </div>
         <div>
           <span data-content="COUNTRY_BADGE"></span>
-          <span data-field="country_badge"> </span>
+          <span id="country-badge-field" data-field="country_badge"> </span>
         </div>
         <div>
           <span data-content="STATE"></span>
-          <span data-field="state"></span>
+          <span id="state-field" data-field="state"></span>
         </div>
         <div>
           <span data-content="EMAIL"></span>
-          <span data-field="email"></span>
+          <span id="email-field" data-field="email"></span>
         </div>
         <div>
           <span data-content="PHONE"></span>
-          <span data-field="phone"></span>
+          <span id="phone-field" data-field="phone"></span>
         </div>
         <div>
           <span data-content="BIRTHDAY"></span>
-          <span data-field="birthday"></span>
+          <span id="birthday-field" data-field="birthday"></span>
         </div>
         <div>
           <span data-content="GENDER"></span>
-          <span class="gender" data-key="male" data-content="MALE"></span>
-          <span class="gender" data-key="female" data-content="FEMALE"></span>
-          <span class="gender" data-key="other" data-content="OTHER"></span>
+          <span id="gender-field-male" class="gender" data-key="male" data-content="MALE"></span>
+          <span id="gender-field-female" class="gender" data-key="female" data-content="FEMALE"></span>
+          <span id="gender-field-other" class="gender" data-key="other" data-content="OTHER"></span>
           <span
+            id="gender-field-notprovided"
             class="gender"
             data-key="notprovided"
             data-content="DONT_SAY"
@@ -78,11 +79,11 @@
         </div>
         <div id="partner">
           <span data-content="PARTNER"></span>
-          <span data-field="partner"></span>
+          <span id="partner-field" data-field="partner"></span>
         </div>
         <div id="telegram">
           <span data-content="TELEGRAM"></span>
-          <span data-field="telegram"></span>
+          <span id="telegram-field" data-field="telegram"></span>
         </div>
       </fieldset>
       <fieldset>
@@ -97,15 +98,15 @@
         </div>
         <div>
           <span data-content="TSHIRT_SIZE"></span>
-          <span data-field="tshirt_size"></span>
+          <span id="tshirt-size-field" data-field="tshirt_size"></span>
         </div>
         <div>
           <span data-content="USER_COMMENTS"></span>
-          <span data-field="user_comments"></span>
+          <span id="user-comments-field" data-field="user_comments"></span>
         </div>
       </fieldset>
       <div class="confirm_checkbox">
-        <input type="checkbox" />
+        <input id="confirm-checkbox" type="checkbox" />
         <span data-snippet="confirm_checkbox"></span>
       </div>
       <div class="submit">
@@ -126,6 +127,7 @@
           <p id="countdown"></p>
         </div>
         <button
+          id="submit-button"
           data-content="SUBMIT"
           disabled
           class="activate-after-countdown"
