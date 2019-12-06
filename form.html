@@ -19,7 +19,7 @@
         <div>
           <label>
             <span data-content="NICKNAME"></span>
-            <input data-field="nickname" placeholder="BlackCheetah" />
+            <input id="nickname-field" data-field="nickname" placeholder="BlackCheetah" />
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="NICKNAME_HELP"></p>
@@ -27,7 +27,7 @@
         <div>
           <label>
             <span data-content="FIRST_NAME"></span>
-            <input data-field="first_name" placeholder="Hans" />
+            <input id="first-name-field" data-field="first_name" placeholder="Hans" />
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="FIRST_NAME_HELP"></p>
@@ -35,7 +35,7 @@
         <div>
           <label>
             <span data-content="LAST_NAME"></span>
-            <input data-field="last_name" placeholder="Mustermann" />
+            <input id="last-name-field" data-field="last_name" placeholder="Mustermann" />
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="LAST_NAME_HELP"></p>
@@ -43,7 +43,7 @@
         <div>
           <label>
             <span data-content="STREET"></span>
-            <input data-field="street" placeholder="Teststraße 24" />
+            <input id="street-field" data-field="street" placeholder="Teststraße 24" />
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="STREET_HELP"></p>
@@ -51,7 +51,7 @@
         <div>
           <label>
             <span data-content="ZIP"></span>
-            <input data-field="zip" placeholder="12345" /><input data-field="city" placeholder="Berlin" />
+            <input id="zip-field" data-field="zip" placeholder="12345" /><input id="city-field" data-field="city" placeholder="Berlin" />
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="ZIP_HELP"></p>
@@ -59,7 +59,7 @@
         <div>
           <label>
             <span data-content="COUNTRY"></span>
-            <select data-field="country"> </select>
+            <select id="country-field" data-field="country"> </select>
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="COUNTRY_HELP"></p>
@@ -67,7 +67,7 @@
         <div>
           <label>
             <span data-content="COUNTRY_BADGE"></span>
-            <select data-field="country_badge"> </select>
+            <select id="country-badge-field" data-field="country_badge"> </select>
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="COUNTRY_BADGE_HELP"></p>
@@ -75,7 +75,7 @@
         <div>
           <label>
             <span data-content="STATE"></span>
-            <input data-field="state" placeholder="Sachsen" />
+            <input id="state-field" data-field="state" placeholder="Sachsen" />
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="STATE_HELP"></p>
@@ -84,6 +84,7 @@
           <label>
             <span data-content="EMAIL"></span>
             <input
+              id="email-field"
               data-field="email"
               placeholder="email@mailinator.com"
             />
@@ -95,6 +96,7 @@
           <label>
             <span data-content="EMAIL_REPEAT"></span>
             <input
+              id="email-repeat-field"
               data-field="email_repeat"
               placeholder="email@mailinator.com"
             />
@@ -103,7 +105,7 @@
         <div>
           <label>
             <span data-content="PHONE"></span>
-            <input data-field="phone" placeholder="+49-2151-123456" />
+            <input id="phone-field" data-field="phone" placeholder="+49-2151-123456" />
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="PHONE_HELP"></p>
@@ -114,7 +116,7 @@
         <div>
           <label>
             <span data-content="BIRTHDAY"></span>
-            <input type="date" data-field="birthday" placeholder="1998-11-23" />
+            <input id="birthday-field" type="date" data-field="birthday" placeholder="1998-11-23" />
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="BIRTHDAY_HELP"></p>
@@ -122,7 +124,7 @@
         <div>
           <label>
             <span data-content="GENDER"></span>
-            <select data-field="gender">
+            <select id="gender-field" data-field="gender">
               <option data-content="MALE" value="male"></option>
               <option data-content="FEMALE" value="female"></option>
               <option data-content="OTHER" value="other"></option>
@@ -147,7 +149,7 @@
         <div id="telegram">
           <label>
             <span data-content="TELEGRAM"></span>
-            <input data-field="telegram"></input>
+            <input id="telegram-field" data-field="telegram"></input>
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="TELEGRAM_HELP"></p>
@@ -163,7 +165,7 @@
         <div>
           <label>
             <span data-content="TSHIRT_SIZE"></span>
-            <select data-field="tshirt_size"> </select>
+            <select id="tshirt-size-field" data-field="tshirt_size"> </select>
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="TSHIRT_SIZE_HELP"></p>
@@ -175,14 +177,14 @@
         <div>
           <label>
             <span data-content="USER_COMMENTS"></span>
-            <textarea data-field="user_comments"></textarea>
+            <textarea id="user-comments-field" data-field="user_comments"></textarea>
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="USER_COMMENTS_HELP"></p>
         </div>
       </fieldset>
       <div class="button-link">
-        <a href="./submit.html" data-content="GOTO_SUMMARY"></a>
+        <a id="submitbutton" href="./submit.html" data-content="GOTO_SUMMARY" class="add-current-time-mock-if-set"></a>
       </div>
       <div data-snippet="form-post"></div>
     </div>

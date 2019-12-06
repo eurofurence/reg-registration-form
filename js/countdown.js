@@ -2,6 +2,19 @@ document.addEventListener("DOMContentLoaded", async () => {
   const configResponse = await fetch("./config.json");
   const config = await configResponse.json();
 
+  // this is used by our automated end-to-end tests to control the "current time" in a convenient fashion
+  //
+  // NOTE: the backend checks the current time independently when submitting registrations, so this is perfectly safe
+  //
+  if (window.location.search.indexOf('currentTime') !== -1) {
+    config.timeServer += window.location.search;
+
+    const elements = document.querySelectorAll(".add-current-time-mock-if-set");
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].href += window.location.search;
+    }
+  }
+
   loadTime(config);
 });
 
@@ -16,6 +29,12 @@ async function loadTime(config) {
   try {
     timeResponse = await fetch(config.timeServer);
     time = await timeResponse.json();
+
+    // only show the 'get started' button, if the timeserver is ok (and thus javascript is working)
+    const elements = document.querySelectorAll(".unhide-if-timeserver-ok");
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].classList.remove("hidden");
+    }
   } catch (e) {
     longText.classList.add("hidden");
     shortText.classList.add("hidden");

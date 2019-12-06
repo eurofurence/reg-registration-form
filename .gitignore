@@ -62,3 +62,5 @@ typings/
 
 # JetBrains WebStorm files
 .idea/**
+jmeter/out
+

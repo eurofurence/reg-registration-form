@@ -8,11 +8,11 @@
     <meta charset="utf-8" />
   </head>
   <body>
-    <noscript>
-      You need to enable Javascript in order to use this site!
-    </noscript>
     <div data-snippet="header"></div>
     <div class="container">
+      <noscript>
+        <p>You need to enable Javascript in order to use this site!</p>
+      </noscript>
       <div data-snippet="landing-pre"></div>
       <div id="countdown-container">
         <p id="countdown-text-long" data-content="COUNTDOWN_PRETEXT_LONG"></p>
@@ -24,8 +24,8 @@
         ></p>
         <p id="countdown"></p>
       </div>
-      <div class="button-link">
-        <a href="./form.html" data-content="START_REG"></a>
+      <div id="start-button-container" class="button-link hidden unhide-if-timeserver-ok">
+        <a id="start-button" href="./form.html" data-content="START_REG" class="add-current-time-mock-if-set"></a>
       </div>
       <div data-snippet="landing-post"></div>
     </div>

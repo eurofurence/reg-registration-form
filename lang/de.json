@@ -3,7 +3,7 @@
   "WELCOME_HEADER": "Willkommen zur Eurofurence!",
   "COUNTDOWN_PRETEXT_LONG": "Die Registration hat noch nicht begonnen. Du kannst deine Daten schon eingeben, sie aber noch nicht abschicken bis die Registration offiziell startet. Das ist am",
   "COUNTDOWN_PRETEXT_SHORT": "Die Registration beginnt bald! Du kannst deine Daten schon eingeben, sodass du bereit bist deine Registrierung abzuschicken. Dies ist möglich in:",
-  "COUNTDOWN_ERROR": "Zeitserver nicht erreichbar!",
+  "COUNTDOWN_ERROR": "Hintergrundservice nicht erreichbar!<br/>(Der \"Start Registration\"-Knopf wurde ausgeblendet, ohne den Hintergrundservice funktioniert die Registrierung ohnehin nicht)",
   "SUBMIT_COUNTDOWN_PRETEXT_LONG": "Die Registration hat noch nicht begonnen. Deine Daten sind gespeichert und können zum Registrierungsstart abgeschickt werden. Das ist am",
   "SUBMIT_COUNTDOWN_PRETEXT_SHORT": "Die Registrierung beginnt bald! Sei bereit!",
   "START_REG": "Start Registration!",

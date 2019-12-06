@@ -153,6 +153,7 @@ fieldset button {
 
 .options > div {
   display: inline-block;
+  width: 50%;
 }
 
 input[type="checkbox"] {
@@ -204,6 +205,7 @@ table tbody tr td:not(:first-child) {
 td,
 th {
   border: 1px solid lightgray;
+  padding: 0;
 }
 
 table label span {

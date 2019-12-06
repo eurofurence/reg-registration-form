@@ -7,8 +7,8 @@ document.addEventListener("click", evt => {
 
   if (target.classList.contains("help-toggle-button")) {
     if (target.classList.contains("table-help")) {
-      target.parentNode.parentNode.nextElementSibling.classList.toggle(
-        "expanded"
+      target.parentNode.parentNode.nextElementSibling.children[1].children[0].classList.toggle(
+           "expanded"
       );
     } else {
       target.parentNode.classList.toggle("expanded");
@@ -28,6 +28,19 @@ document.addEventListener("input", evt => {
 document.addEventListener("DOMContentLoaded", async () => {
   const configResponse = await fetch("./config.json");
   const config = await configResponse.json();
+
+  // this is used by our automated end-to-end tests to control the "current time" in a convenient fashion
+  //
+  // NOTE: the backend checks the current time independently when submitting registrations, so this is perfectly safe
+  //
+  if (window.location.search.indexOf('currentTime') !== -1) {
+    config.timeServer += window.location.search;
+
+    const elements = document.querySelectorAll(".add-current-time-mock-if-set");
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].href += window.location.search;
+    }
+  }
 
   document.addEventListener("focusout", evt => {
     const field = evt.target.getAttribute("data-field");
@@ -153,7 +166,7 @@ function setupOptions(selector, options, lang) {
   options.forEach(option => {
     const entry = document.createElement("div");
     entry.innerHTML = `<label>
-    <input type="checkbox" data-field="${selector}:${option.code}" ${
+    <input type="checkbox" id="${selector}-${option.code}-field" data-field="${selector}:${option.code}" ${
       option.default ? " checked" : ""
     }/>
       <span>${option[lang].label}</span>
@@ -192,7 +205,7 @@ function setupPackages(tiers, packages, lang) {
       pack => `<tr>
     <td>
       <label>
-      <input type="checkbox" data-field="packages:${pack.code}" ${
+      <input type="checkbox" id="packages-${pack.code}-field" data-field="packages:${pack.code}" ${
         pack.default ? " checked" : ""
       }/>
       <span>${pack[lang].label}</span>
@@ -201,9 +214,13 @@ function setupPackages(tiers, packages, lang) {
     ${pack.price.map(price => `<td>${price}</td>`).join("")}
     <td><button class="help-toggle-button table-help" tabindex="-1">?</button></td>
     </tr>
-    <div class="helptext-container"><div class="helptext">${
-      pack[lang].description
-    }</div></div>`
+    <tr>
+      <td></td>
+      <td colspan="3"><div class="helptext-container"><div class="helptext">${
+          pack[lang].description
+        }</div></div></td>
+      <td></td>
+    </tr>`
     )
     .join("");
   table.appendChild(body);
@@ -243,7 +260,7 @@ function isValid(element, value) {
     case "email":
       return value.length >= 1 && value.length <= 200;
     case "email_repeat":
-      return value === document.querySelector('[data-field="email"]').value;
+      return value.length >= 1 && value.length <= 200 && value === document.querySelector('[data-field="email"]').value;
     case "phone":
       return value.length >= 1 && value.length <= 32;
     case "birthday":

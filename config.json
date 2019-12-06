@@ -1,8 +1,7 @@
 {
   "defaultLanguage": "en",
   "availableLanguages": {
-    "en": "English",
-    "de": "Deutsch"
+    "en": "English"
   },
   "availableCountries": {
     "none": { "en": "- Please Select -", "de": "- Bitte Auswählen -" },
@@ -329,8 +328,8 @@
     "youngest": "2002-08-19",
     "oldest": "1901-01-01"
   },
-  "timeServer": "http://example.com/time/",
-  "apiEndpoint": "http://localhost:8080/registration/new",
+  "timeServer": "http://localhost:9091/api/rest/v1/countdown",
+  "apiEndpoint": "http://localhost:9091/api/rest/v1/attendees",
   "flags": [
     {
       "code": "anon",
@@ -373,7 +372,7 @@
     {
       "en": {
         "label": "Early Bird",
-        "description": "until before 1st of February"
+        "description": "before 1st of February"
       },
       "de": {
         "label": "Frühbucher",
@@ -430,7 +429,7 @@
     },
     {
       "code": "sponsor",
-      "default": true,
+      "default": false,
       "price": ["65€", "65€", "65€"],
       "en": {
         "label": "Sponsor Upgrade",
@@ -459,7 +458,7 @@
   "options": [
     {
       "code": "art",
-      "default": true,
+      "default": false,
       "en": {
         "label": "Artist",
         "description": "Are you an artist? By checking this box, you let us know that you are interested in information for artists. You will be notified if there are any special artist events and we might send you announcements that we find especially interesting for artists."
@@ -471,7 +470,7 @@
     },
     {
       "code": "anim",
-      "default": true,
+      "default": false,
       "en": {
         "label": "Animator",
         "description": "Are you an animator? By checking this box, you let us know that you are interested in information for people interested in the art of animation. You will be notified if there are any special animation-related events and we might send you announcements that we find especially interesting for everyone interested in animation."
@@ -483,7 +482,7 @@
     },
     {
       "code": "music",
-      "default": true,
+      "default": false,
       "en": {
         "label": "Musician",
         "description": "Are you a musician? By checking this box, you let us know that you are interested in information for musicians. You will be notified if there are any special musicial events and we might send you announcements that we find especially interesting for musicians."

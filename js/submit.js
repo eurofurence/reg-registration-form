@@ -2,6 +2,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   const configResponse = await fetch("./config.json");
   const config = await configResponse.json();
 
+  // this is used by our automated end-to-end tests to control the "current time" in a convenient fashion
+  //
+  // NOTE: the backend checks the current time independently when submitting registrations, so this is perfectly safe
+  //
+  if (window.location.search.indexOf('currentTime') !== -1) {
+    config.timeServer += window.location.search;
+  }
+
   const langCode = navigator.userLanguage || navigator.language;
   let lang = langCode.substr(0, 2);
   if (!Object.keys(config.availableLanguages).includes(lang)) {
