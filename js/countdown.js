@@ -7,14 +7,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   // NOTE: the backend checks the current time independently when submitting registrations, so this is perfectly safe
   //
   if (window.location.search.indexOf('currentTime') !== -1) {
-    window['mockCurrentTime'] = '' + window.location.search;
-  }
-  if (window['mockCurrentTime']) {
-    config.timeServer += '' + window['mockCurrentTime'];
+    config.timeServer += window.location.search;
 
     const elements = document.querySelectorAll(".add-current-time-mock-if-set");
     for (let i = 0; i < elements.length; i++) {
-      elements[i].href += '' + window['mockCurrentTime'];
+      elements[i].href += window.location.search;
     }
   }
 

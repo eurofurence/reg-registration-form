@@ -7,10 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // NOTE: the backend checks the current time independently when submitting registrations, so this is perfectly safe
   //
   if (window.location.search.indexOf('currentTime') !== -1) {
-    window['mockCurrentTime'] = '' + window.location.search;
-  }
-  if (window['mockCurrentTime']) {
-    config.timeServer += '' + window['mockCurrentTime'];
+    config.timeServer += window.location.search;
   }
 
   const langCode = navigator.userLanguage || navigator.language;
