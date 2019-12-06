@@ -11,6 +11,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
   if (window['mockCurrentTime']) {
     config.timeServer += '' + window['mockCurrentTime'];
+
+    const elements = document.querySelectorAll(".add-current-time-mock-if-set");
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].href += '' + window['mockCurrentTime'];
+    }
   }
 
   loadTime(config);

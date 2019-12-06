@@ -29,6 +29,22 @@ document.addEventListener("DOMContentLoaded", async () => {
   const configResponse = await fetch("./config.json");
   const config = await configResponse.json();
 
+  // this is used by our automated end-to-end tests to control the "current time" in a convenient fashion
+  //
+  // NOTE: the backend checks the current time independently when submitting registrations, so this is perfectly safe
+  //
+  if (window.location.search.indexOf('currentTime') !== -1) {
+    window['mockCurrentTime'] = '' + window.location.search;
+  }
+  if (window['mockCurrentTime']) {
+    config.timeServer += '' + window['mockCurrentTime'];
+
+    const elements = document.querySelectorAll(".add-current-time-mock-if-set");
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].href += '' + window['mockCurrentTime'];
+    }
+  }
+
   document.addEventListener("focusout", evt => {
     const field = evt.target.getAttribute("data-field");
     if (field) {
