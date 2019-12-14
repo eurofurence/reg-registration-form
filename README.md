@@ -39,3 +39,9 @@ All the text displayed on the page is contained in the translation file to allow
 For more complex changes in the markup, you can have a look at the snippets directory. There you can write HTML markup. To include texts from the translation files, you can set the `data-content` attribute on an element to fill it with the string specified in the translation. Keep in mind that `data-content` should only be used on leaf nodes of the DOM tree as any content will be overwritten by the translation.
 
 If you need to change even more, you can have a look at the html files in the root directory. **Be aware that you can break the app if you change things there!** You can for example add a new snippet entry point by using the `data-snippet` attribute.
+
+## Convert for browser compatibility
+
+We use [babel](https://babeljs.io/rep) to transpile our javascript code to work with older browsers such as IE11. Not all features
+will work, e.g. on IE11 the form fields are lost if you navigate back, but it is at least possible to make a new registration.
+ 

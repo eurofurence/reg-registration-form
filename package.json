@@ -1,0 +1,35 @@
+{
+  "name": "reg-registration-form",
+  "version": "0.1.0",
+  "homepage": "https://github.com/eurofurence/reg-registration-form",
+  "license": "MIT",
+  "angular-cli": {},
+  "private": true,
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0",
+    "fetch-polyfill": "^0.8.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "targets": {
+            "browsers": [
+              "> 1%",
+              "last 2 versions",
+              "ie >= 11"
+            ]
+          },
+          "modules": false
+        }
+      ]
+    ],
+    "plugins": []
+  }
+}

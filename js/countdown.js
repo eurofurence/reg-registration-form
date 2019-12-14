@@ -63,7 +63,7 @@ async function loadTime(config) {
     } else {
       const useRelative = endTime - now < 3600000;
 
-      let timeString = new Date(time.targetTime).toLocaleDateString("default", {
+      let timeString = new Date(time.targetTime).toLocaleDateString("en-GB", {
         weekday: "long",
         year: "numeric",
         month: "long",
