@@ -82,6 +82,15 @@ document.addEventListener("DOMContentLoaded", async () => {
               });
             }
           });
+        } else {
+          // re-enable any de-selected packages that are mandatory
+          config.packages.forEach(pkg => {
+            if (pkg.required) {
+              document.querySelector(
+                  '[data-field="packages:' + pkg.code + '"]'
+              ).checked = true;
+            }
+          })
         }
       }
       storeForm();
@@ -258,7 +267,7 @@ function isValid(element, value) {
     case "country_badge":
       return value !== "none";
     case "email":
-      return value.length >= 1 && value.length <= 200;
+      return value.length >= 1 && value.length <= 200 && /^[^@\s]+@[^@\s]+$/.test(value);
     case "email_repeat":
       return value.length >= 1 && value.length <= 200 && value === document.querySelector('[data-field="email"]').value;
     case "phone":
