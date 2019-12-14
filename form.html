@@ -55,8 +55,9 @@
         <div>
           <label>
             <span data-content="ZIP"></span>
-            <input id="zip-field" data-field="zip" placeholder="12345" /><input id="city-field" data-field="city" placeholder="Berlin" />
+            <input id="zip-field" data-field="zip" placeholder="12345" />
           </label>
+          <input id="city-field" data-field="city" placeholder="Berlin" />
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="ZIP_HELP"></p>
         </div>
@@ -89,6 +90,7 @@
             <span data-content="EMAIL"></span>
             <input
               id="email-field"
+              type="email"
               data-field="email"
               placeholder="email@mailinator.com"
             />
@@ -101,6 +103,7 @@
             <span data-content="EMAIL_REPEAT"></span>
             <input
               id="email-repeat-field"
+              type="email"
               data-field="email_repeat"
               placeholder="email@mailinator.com"
             />
