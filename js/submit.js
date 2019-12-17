@@ -147,11 +147,11 @@ function setupSubmitButton(timeServer, endpoint) {
     let timeResponse, time;
 
     // hide all error messages
-    document
-      .querySelectorAll(
+    Array.from(
+      document.querySelectorAll(
         "#validation-error,#success-response,#generic-error,#server-error"
       )
-      .forEach(element => element.classList.add("hidden"));
+    ).forEach(element => element.classList.add("hidden"));
 
     if (!formValid()) {
       return showError("INVALID");

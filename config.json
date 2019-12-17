@@ -404,6 +404,7 @@
     {
       "code": "attendance",
       "default": true,
+      "required": true,
       "price": ["90€", "100€", "125€"],
       "en": {
         "label": "Entrance Fee",
@@ -417,6 +418,7 @@
     {
       "code": "stage",
       "default": true,
+      "required": true,
       "price": ["5€", "5€", "5€"],
       "en": {
         "label": "Stage Ticket",
@@ -430,6 +432,7 @@
     {
       "code": "sponsor",
       "default": false,
+      "required": false,
       "price": ["65€", "65€", "65€"],
       "en": {
         "label": "Sponsor Upgrade",
@@ -443,6 +446,7 @@
     {
       "code": "sponsor2",
       "default": false,
+      "required": false,
       "price": ["160€", "160€", "160€"],
       "en": {
         "label": "Supersponsor Upgrade",

@@ -82,6 +82,17 @@ document.addEventListener("DOMContentLoaded", async () => {
               });
             }
           });
+        } else {
+          // re-enable any de-selected packages that are mandatory
+          config.packages.forEach(pkg => {
+            if (pkg.required) {
+              var chkbox = document.querySelector(
+                  '[data-field="packages:' + pkg.code + '"]'
+              );
+              chkbox.checked = true;
+              chkbox.disabled = true;
+            }
+          })
         }
       }
       storeForm();
@@ -226,6 +237,18 @@ function setupPackages(tiers, packages, lang) {
   table.appendChild(body);
 
   container.appendChild(table);
+
+  // select any packages that are mandatory and make checkboxes read only
+  packages.forEach(pkg => {
+    if (pkg.required) {
+      var chkbox = document.querySelector(
+          '[data-field="packages:' + pkg.code + '"]'
+      );
+      chkbox.checked = true;
+      chkbox.disabled = true;
+    }
+  })
+
 }
 
 function setupBirthday(limits) {
@@ -258,7 +281,7 @@ function isValid(element, value) {
     case "country_badge":
       return value !== "none";
     case "email":
-      return value.length >= 1 && value.length <= 200;
+      return value.length >= 1 && value.length <= 200 && /^[^@\s]+@[^@\s]+$/.test(value);
     case "email_repeat":
       return value.length >= 1 && value.length <= 200 && value === document.querySelector('[data-field="email"]').value;
     case "phone":

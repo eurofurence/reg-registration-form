@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="js/translate.js"></script>
-    <script src="js/form.js"></script>
+    <!-- polyfills needed for IE and other oddball browser compatibility -->
+    <script src="js-out/polyfill.min.js"></script>
+    <script src="js-out/fetch.js"></script>
+    <!-- regular code -->
+    <script src="js-out/translate.js"></script>
+    <script src="js-out/form.js"></script>
 
     <link rel="stylesheet" href="css/style.css" />
     <meta charset="utf-8" />
@@ -51,8 +55,9 @@
         <div>
           <label>
             <span data-content="ZIP"></span>
-            <input id="zip-field" data-field="zip" placeholder="12345" /><input id="city-field" data-field="city" placeholder="Berlin" />
+            <input id="zip-field" data-field="zip" placeholder="12345" />
           </label>
+          <input id="city-field" data-field="city" placeholder="Berlin" />
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="ZIP_HELP"></p>
         </div>
@@ -85,6 +90,7 @@
             <span data-content="EMAIL"></span>
             <input
               id="email-field"
+              type="email"
               data-field="email"
               placeholder="email@mailinator.com"
             />
@@ -97,6 +103,7 @@
             <span data-content="EMAIL_REPEAT"></span>
             <input
               id="email-repeat-field"
+              type="email"
               data-field="email_repeat"
               placeholder="email@mailinator.com"
             />
