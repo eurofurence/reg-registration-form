@@ -64,5 +64,4 @@ typings/
 .idea/**
 jmeter/out
 
-package-lock.json
 js-out/**

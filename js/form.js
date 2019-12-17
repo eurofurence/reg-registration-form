@@ -86,9 +86,11 @@ document.addEventListener("DOMContentLoaded", async () => {
           // re-enable any de-selected packages that are mandatory
           config.packages.forEach(pkg => {
             if (pkg.required) {
-              document.querySelector(
+              var chkbox = document.querySelector(
                   '[data-field="packages:' + pkg.code + '"]'
-              ).checked = true;
+              );
+              chkbox.checked = true;
+              chkbox.disabled = true;
             }
           })
         }
@@ -235,6 +237,18 @@ function setupPackages(tiers, packages, lang) {
   table.appendChild(body);
 
   container.appendChild(table);
+
+  // select any packages that are mandatory and make checkboxes read only
+  packages.forEach(pkg => {
+    if (pkg.required) {
+      var chkbox = document.querySelector(
+          '[data-field="packages:' + pkg.code + '"]'
+      );
+      chkbox.checked = true;
+      chkbox.disabled = true;
+    }
+  })
+
 }
 
 function setupBirthday(limits) {

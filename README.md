@@ -45,3 +45,4 @@ If you need to change even more, you can have a look at the html files in the ro
 We use [babel](https://babeljs.io/rep) to transpile our javascript code to work with older browsers such as IE11. Not all features
 will work, e.g. on IE11 the form fields are lost if you navigate back, but it is at least possible to make a new registration.
  
+To transpile the code, run ```npm i && ./babel.sh``` in the root directory of the repository.
