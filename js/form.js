@@ -45,22 +45,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.addEventListener("focusout", evt => {
     const field = evt.target.getAttribute("data-field");
     if (field) {
-      if (isValid(field, evt.target.value)) {
-        evt.target.classList.remove("invalid");
-      } else {
-        evt.target.classList.add("invalid");
-      }
+      revalidateField(field, evt.target);
     }
   });
 
   document.addEventListener("change", evt => {
     const field = evt.target.getAttribute("data-field");
     if (field) {
-      if (isValid(field, evt.target.value)) {
-        evt.target.classList.remove("invalid");
-      } else {
-        evt.target.classList.add("invalid");
-      }
+      revalidateField(field, evt.target);
 
       if (field === "country") {
         document.querySelector('[data-field="country_badge"]').value =
@@ -122,6 +114,23 @@ document.addEventListener("DOMContentLoaded", async () => {
     restoreForm();
   }
 });
+
+function revalidateField(fieldCode, fieldElement) {
+  if (isValid(fieldCode, fieldElement.value)) {
+    fieldElement.classList.remove("invalid");
+  } else {
+    fieldElement.classList.add("invalid");
+  }
+  if (fieldCode === "email") {
+    // when changing email, also validate email_repeat
+    let emailRepeatElement = document.querySelector(`[data-field="email_repeat"]`);
+    if (isValid("email_repeat", emailRepeatElement.value)) {
+      emailRepeatElement.classList.remove("invalid");
+    } else {
+      emailRepeatElement.classList.add("invalid");
+    }
+  }
+}
 
 function setupCountries(countries, lang) {
   const elements = document.querySelectorAll(
@@ -315,10 +324,12 @@ function restoreForm() {
   if (data) {
     data = JSON.parse(data);
     Object.entries(data).forEach(([key, value]) => {
+      let fieldElement = document.querySelector(`[data-field="${key}"]`);
       if (typeof value === "boolean") {
-        document.querySelector(`[data-field="${key}"]`).checked = value;
+        fieldElement.checked = value;
       } else {
-        document.querySelector(`[data-field="${key}"]`).value = value;
+        fieldElement.value = value;
+        revalidateField(key, fieldElement);
       }
     });
   }

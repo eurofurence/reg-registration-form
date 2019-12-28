@@ -24,7 +24,7 @@
         <div>
           <label>
             <span data-content="NICKNAME"></span>
-            <input id="nickname-field" data-field="nickname" placeholder="BlackCheetah" />
+            <input id="nickname-field" data-field="nickname" placeholder="BlackCheetah" class="invalid" />
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="NICKNAME_HELP"></p>
@@ -32,7 +32,7 @@
         <div>
           <label>
             <span data-content="FIRST_NAME"></span>
-            <input id="first-name-field" data-field="first_name" placeholder="Hans" />
+            <input id="first-name-field" data-field="first_name" placeholder="Hans" class="invalid" />
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="FIRST_NAME_HELP"></p>
@@ -40,7 +40,7 @@
         <div>
           <label>
             <span data-content="LAST_NAME"></span>
-            <input id="last-name-field" data-field="last_name" placeholder="Mustermann" />
+            <input id="last-name-field" data-field="last_name" placeholder="Mustermann" class="invalid" />
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="LAST_NAME_HELP"></p>
@@ -48,7 +48,7 @@
         <div>
           <label>
             <span data-content="STREET"></span>
-            <input id="street-field" data-field="street" placeholder="Teststraße 24" />
+            <input id="street-field" data-field="street" placeholder="Teststraße 24" class="invalid" />
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="STREET_HELP"></p>
@@ -56,16 +56,16 @@
         <div>
           <label>
             <span data-content="ZIP"></span>
-            <input id="zip-field" data-field="zip" placeholder="12345" />
+            <input id="zip-field" data-field="zip" placeholder="12345" class="invalid" />
           </label>
-          <input id="city-field" data-field="city" placeholder="Berlin" />
+          <input id="city-field" data-field="city" placeholder="Berlin" class="invalid" />
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="ZIP_HELP"></p>
         </div>
         <div>
           <label>
             <span data-content="COUNTRY"></span>
-            <select id="country-field" data-field="country"> </select>
+            <select id="country-field" data-field="country" class="invalid" > </select>
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="COUNTRY_HELP"></p>
@@ -73,7 +73,7 @@
         <div>
           <label>
             <span data-content="COUNTRY_BADGE"></span>
-            <select id="country-badge-field" data-field="country_badge"> </select>
+            <select id="country-badge-field" data-field="country_badge" class="invalid" > </select>
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="COUNTRY_BADGE_HELP"></p>
@@ -94,6 +94,7 @@
               type="email"
               data-field="email"
               placeholder="email@mailinator.com"
+              class="invalid"
             />
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
@@ -107,13 +108,14 @@
               type="email"
               data-field="email_repeat"
               placeholder="email@mailinator.com"
+              class="invalid"
             />
           </label>
         </div>
         <div>
           <label>
             <span data-content="PHONE"></span>
-            <input id="phone-field" data-field="phone" placeholder="+49-2151-123456" />
+            <input id="phone-field" data-field="phone" placeholder="+49-2151-123456" class="invalid" />
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="PHONE_HELP"></p>
@@ -124,7 +126,7 @@
         <div>
           <label>
             <span data-content="BIRTHDAY"></span>
-            <input id="birthday-field" type="date" data-field="birthday" placeholder="1998-11-23" />
+            <input id="birthday-field" type="date" data-field="birthday" placeholder="1998-11-23" class="invalid" />
           </label>
           <button class="help-toggle-button" tabindex="-1">?</button>
           <p class="helptext" data-content="BIRTHDAY_HELP"></p>
