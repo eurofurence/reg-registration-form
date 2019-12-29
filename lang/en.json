@@ -85,7 +85,7 @@
   "SUCCESS": "Submission Successful!",
   "REG_NUMBER": "Your registration number is",
   "SUCCESS_EMAIL": "You will receive an email with a confirmation link. Please note that it may take up to 30 minutes for the Email to arrive.",
-  "ERROR": "Someting went wrong!",
+  "ERROR": "Something went wrong!",
   "GENERIC_ERROR": "There was an error while submitting the registration or processing the server response:",
   "SERVER_ERROR": "The server was unable to process the registration. Please contact us with the following information:",
   "CREATE_ANOTHER": "Create another registration"
