@@ -82,7 +82,10 @@ async function loadTime(config) {
       }
 
       countdown.textContent = timeString;
-      requestAnimationFrame(count);
+
+      setTimeout(function() {
+        requestAnimationFrame(count);
+      }, 100);
     }
   }
 
