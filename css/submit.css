@@ -59,19 +59,36 @@ table tbody tr td:first-child {
   margin-top: 1em;
 }
 
-.confirm_checkbox > * {
+.confirm_checkbox label > * {
   vertical-align: middle;
 }
 
-.confirm_checkbox > input {
-  width: 1.2rem;
-  height: 1.2rem;
+.confirm_checkbox label > input {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
-.confirm_checkbox > span {
-  display: inline-block;
-  vertical-align: middle;
-  width: 95%;
+.confirm_checkbox label > span {
+  width: 90%;
+  text-align: left;
+}
+
+.confirm_checkbox label > input + span {
+  outline: 1px solid #ff5555;
+  background-color: #ffdddd;
+  color: #880000;
+}
+
+.confirm_checkbox label > input:checked + span {
+  outline: none;
+  background: inherit;
+  color: inherit;
+}
+
+.confirm_checkbox label > span > * {
+  display: inline;
+  padding: 0;
+  vertical-align: baseline;
 }
 
 .hidden {
