@@ -73,6 +73,18 @@ table tbody tr td:first-child {
   text-align: left;
 }
 
+.confirm_checkbox label > input + span {
+  outline: 1px solid #ff5555;
+  background-color: #ffdddd;
+  color: #880000;
+}
+
+.confirm_checkbox label > input:checked + span {
+  outline: none;
+  background: inherit;
+  color: inherit;
+}
+
 .confirm_checkbox label > span > * {
   display: inline;
   padding: 0;
