@@ -47,7 +47,22 @@ function setupCountries(countries, lang) {
 
 function setupBirthday() {
   const element = document.querySelector('[data-field="birthday"]');
-  element.textContent = new Date(element.textContent).toLocaleDateString();
+
+  // try to determine best match to locale date format by formatting an example date
+  //
+  // Note how this may be one day off depending on local timezone setting hence we can NOT just use
+  //   element.textContent = new Date(element.textContent).toLocaleDateString();
+  // or US Pacific users see a wrong date of birth. Also, js has no toUTCDateString() function.
+  //
+  const dateFormatExample = new Date('2019-10-24').toLocaleDateString();
+  if (dateFormatExample === '24.10.2019' || dateFormatExample === '23.10.2019' || dateFormatExample === '25.10.2019') {
+    element.textContent = element.textContent.replace(/([0-9]{4})-([0-9]{2})-([0-9]{2})/, "$3.$2.$1");
+  } else if (dateFormatExample === '24/10/2019' || dateFormatExample === '23/10/2019' || dateFormatExample === '25/10/2019') {
+    element.textContent = element.textContent.replace(/([0-9]{4})-([0-9]{2})-([0-9]{2})/, "$3/$2/$1");
+  } else {
+    // default to US date display format if no match was found
+    element.textContent = element.textContent.replace(/([0-9]{4})-([0-9]{2})-([0-9]{2})/, "$2/$3/$1");
+  }
 }
 
 function setupTShirts(tshirts, lang) {
