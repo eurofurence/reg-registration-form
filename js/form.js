@@ -272,7 +272,7 @@ function isValid(element, value) {
       return (
         value.length >= 2 &&
         value.length <= 80 &&
-        /^([A-Za-z]+[^A-Za-z]?[A-Za-z]+[^A-Za-z]?[A-Za-z]*|[^A-Za-z]?[A-Za-z]+[^A-Za-z]?[A-Za-z]+|[^A-Za-z]?[A-Za-z][A-Za-z]+[^A-Za-z]?|[^A-Za-z]{1,2}[A-Za-z][A-Za-z]+|[A-Za-z]+[^A-Za-z]{1,2}[A-Za-z]+|[A-Za-z][A-Za-z]+[^A-Za-z]{1,2})$/.test(
+        /^([A-Za-z0-9 ]+[^A-Za-z0-9 ]?[A-Za-z0-9 ]+[^A-Za-z0-9 ]?[A-Za-z0-9 ]*|[^A-Za-z0-9 ]?[A-Za-z0-9 ]+[^A-Za-z0-9 ]?[A-Za-z0-9 ]+|[^A-Za-z0-9 ]?[A-Za-z0-9 ][A-Za-z0-9 ]+[^A-Za-z0-9 ]?|[^A-Za-z0-9 ]{1,2}[A-Za-z0-9 ][A-Za-z0-9 ]+|[A-Za-z0-9 ]+[^A-Za-z0-9 ]{1,2}[A-Za-z0-9 ]+|[A-Za-z0-9 ][A-Za-z0-9 ]+[^A-Za-z0-9 ]{1,2})$/.test(
           value
         )
       );
