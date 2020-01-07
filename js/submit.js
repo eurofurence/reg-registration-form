@@ -195,6 +195,7 @@ function setupSubmitButton(timeServer, endpoint) {
       }
       btn.setAttribute("disabled", true);
       progressIndicator.classList.remove("hidden");
+      btn.classList.add("spin");
       try {
         const response = await fetch(endpoint, {
           method: "PUT",
@@ -203,6 +204,7 @@ function setupSubmitButton(timeServer, endpoint) {
         });
 
         progressIndicator.classList.add("hidden");
+        btn.classList.remove("spin");
         submitInProgress = 0;
 
         if (response.status === 201) {
