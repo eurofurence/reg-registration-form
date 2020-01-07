@@ -155,57 +155,73 @@ function restoreForm() {
 
 function setupSubmitButton(timeServer, endpoint) {
   const btn = document.querySelector('button[data-content="SUBMIT"]');
+  const progressIndicator = document.querySelector('#submit-in-progress');
+  var submitInProgress = 0;
 
   const payload = JSON.stringify(getPayload());
 
   btn.addEventListener("click", async () => {
-    let timeResponse, time;
+    if (submitInProgress === 0) {
+      submitInProgress = 1;
 
-    // hide all error messages
-    Array.from(
-      document.querySelectorAll(
-        "#validation-error,#success-response,#generic-error,#server-error"
-      )
-    ).forEach(element => element.classList.add("hidden"));
+      let timeResponse, time;
 
-    if (!formValid()) {
-      return showError("INVALID");
-    }
-    if (!checkboxIsChecked()) {
-      return showError("CHECKBOX");
-    }
-    try {
-      timeResponse = await fetch(timeServer);
-      time = await timeResponse.json();
-    } catch (e) {
-      return showError("TIMESERVER");
-    }
+      // hide all error messages
+      Array.from(
+          document.querySelectorAll(
+              "#validation-error,#success-response,#generic-error,#server-error"
+          )
+      ).forEach(element => element.classList.add("hidden"));
 
-    if (time.countdown > 0) {
-      return showError("COUNTDOWN");
-    }
-    btn.setAttribute("disabled", true);
-    try {
-      const response = await fetch(endpoint, {
-        method: "PUT",
-        body: payload,
-        headers: { "Content-Type": "application/json" }
-      });
+      if (!formValid()) {
+        submitInProgress = 0;
+        return showError("INVALID");
+      }
+      if (!checkboxIsChecked()) {
+        submitInProgress = 0;
+        return showError("CHECKBOX");
+      }
+      try {
+        timeResponse = await fetch(timeServer);
+        time = await timeResponse.json();
+      } catch (e) {
+        submitInProgress = 0;
+        return showError("TIMESERVER");
+      }
 
-      if (response.status === 201) {
-        showSuccess(
-          response.headers
-            .get("Location")
-            .split("/")
-            .pop()
-        );
-      } else {
-        showServerError(await response.json());
+      if (time.countdown > 0) {
+        submitInProgress = 0;
+        return showError("COUNTDOWN");
+      }
+      btn.setAttribute("disabled", true);
+      progressIndicator.classList.remove("hidden");
+      try {
+        const response = await fetch(endpoint, {
+          method: "PUT",
+          body: payload,
+          headers: {"Content-Type": "application/json"}
+        });
+
+        progressIndicator.classList.add("hidden");
+        submitInProgress = 0;
+
+        if (response.status === 201) {
+          showSuccess(
+              response.headers
+                  .get("Location")
+                  .split("/")
+                  .pop()
+          );
+        } else {
+          showServerError(await response.json());
+          btn.removeAttribute("disabled");
+        }
+      } catch (e) {
+        progressIndicator.classList.add("hidden");
+        submitInProgress = 0;
+        showGenericError(e);
         btn.removeAttribute("disabled");
       }
-    } catch (e) {
-      showGenericError(e);
-      btn.removeAttribute("disabled");
     }
   });
 }
