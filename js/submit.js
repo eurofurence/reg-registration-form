@@ -181,21 +181,29 @@ function setupSubmitButton(timeServer, endpoint) {
         submitInProgress = 0;
         return showError("CHECKBOX");
       }
+
+      btn.setAttribute("disabled", true);
+      progressIndicator.classList.remove("hidden");
+      btn.classList.add("spin");
+
       try {
         timeResponse = await fetch(timeServer);
         time = await timeResponse.json();
       } catch (e) {
+        btn.classList.remove("spin");
+        progressIndicator.classList.add("hidden");
         submitInProgress = 0;
+        btn.removeAttribute("disabled");
         return showError("TIMESERVER");
       }
 
       if (time.countdown > 0) {
+        btn.classList.remove("spin");
+        progressIndicator.classList.add("hidden");
         submitInProgress = 0;
+        btn.removeAttribute("disabled");
         return showError("COUNTDOWN");
       }
-      btn.setAttribute("disabled", true);
-      progressIndicator.classList.remove("hidden");
-      btn.classList.add("spin");
       try {
         const response = await fetch(endpoint, {
           method: "PUT",
@@ -203,8 +211,8 @@ function setupSubmitButton(timeServer, endpoint) {
           headers: {"Content-Type": "application/json"}
         });
 
-        progressIndicator.classList.add("hidden");
         btn.classList.remove("spin");
+        progressIndicator.classList.add("hidden");
         submitInProgress = 0;
 
         if (response.status === 201) {
@@ -219,6 +227,7 @@ function setupSubmitButton(timeServer, endpoint) {
           btn.removeAttribute("disabled");
         }
       } catch (e) {
+        btn.classList.remove("spin");
         progressIndicator.classList.add("hidden");
         submitInProgress = 0;
         showGenericError(e);
