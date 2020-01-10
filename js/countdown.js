@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 
+  deactivateButton();
+
   loadTime(config);
 });
 
@@ -112,5 +114,13 @@ function activateButton() {
 
   for (let i = 0; i < elements.length; i++) {
     elements[i].removeAttribute("disabled");
+  }
+}
+
+function deactivateButton() {
+  const elements = document.querySelectorAll(".activate-after-countdown");
+
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].setAttribute("disabled", true);
   }
 }
