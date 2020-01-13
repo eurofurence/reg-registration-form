@@ -15,6 +15,7 @@
     "AI": { "en": "Anguilla", "de": "Anguilla" },
     "AL": { "en": "Albania", "de": "Albanien" },
     "AM": { "en": "Armenia", "de": "Armenien" },
+    "AN": { "en": "Netherlands Antilles", "de": "Niederländische Antillen" },
     "AO": { "en": "Angola", "de": "Angola" },
     "AQ": { "en": "Antarctica", "de": "Antarktika" },
     "AR": { "en": "Argentina", "de": "Argentinien" },
@@ -35,8 +36,8 @@
     "BJ": { "en": "Benin", "de": "Benin" },
     "BL": { "en": "Saint Barthélemy", "de": "Saint-Barthélemy" },
     "BM": { "en": "Bermuda", "de": "Bermuda" },
-    "BN": { "en": "Brunei Darussalam", "de": "Brunei Darussalam" },
-    "BO": { "en": "Bolivia (Plurinational State of)", "de": "Bolivien" },
+    "BN": { "en": "Brunei", "de": "Brunei" },
+    "BO": { "en": "Bolivia", "de": "Bolivien" },
     "BQ": {
       "en": "Bonaire, Sint Eustatius and Saba",
       "de": "Bonaire, Sint Eustatius und Saba (Niederlande)"
@@ -58,9 +59,9 @@
       "en": "Central African Republic",
       "de": "Zentralafrikanische Republik"
     },
-    "CG": { "en": "Congo", "de": "Kongo, Republik (ehem. K.-Brazzaville)" },
-    "CH": { "en": "Switzerland", "de": "Schweiz (Confoederatio Helvetica)" },
-    "CI": { "en": "Côte d'Ivoire", "de": "Côte d’Ivoire (Elfenbeinküste)" },
+    "CG": { "en": "Congo", "de": "Kongo" },
+    "CH": { "en": "Switzerland", "de": "Schweiz" },
+    "CI": { "en": "Côte d'Ivoire", "de": "Elfenbeinküste" },
     "CK": { "en": "Cook Islands", "de": "Cookinseln" },
     "CL": { "en": "Chile", "de": "Chile" },
     "CM": { "en": "Cameroon", "de": "Kamerun" },
@@ -68,7 +69,7 @@
     "CO": { "en": "Colombia", "de": "Kolumbien" },
     "CR": { "en": "Costa Rica", "de": "Costa Rica" },
     "CU": { "en": "Cuba", "de": "Kuba" },
-    "CV": { "en": "Cabo Verde", "de": "Kap Verde" },
+    "CV": { "en": "Cape Verde", "de": "Kap Verde" },
     "CW": { "en": "Curaçao", "de": "Curaçao" },
     "CX": { "en": "Christmas Island", "de": "Weihnachtsinsel" },
     "CY": { "en": "Cyprus", "de": "Zypern" },
@@ -94,8 +95,8 @@
     "FR": { "en": "France", "de": "Frankreich" },
     "GA": { "en": "Gabon", "de": "Gabun" },
     "GB": {
-      "en": "United Kingdom of Great Britain and Northern Ireland",
-      "de": "Vereinigtes Königreich Großbritannien und Nordirland"
+      "en": "United Kingdom",
+      "de": "Vereinigtes Königreich"
     },
     "GD": { "en": "Grenada", "de": "Grenada" },
     "GE": { "en": "Georgia", "de": "Georgien" },
@@ -136,10 +137,7 @@
       "de": "Britisches Territorium im Indischen Ozean"
     },
     "IQ": { "en": "Iraq", "de": "Irak" },
-    "IR": {
-      "en": "Iran (Islamic Republic of)",
-      "de": "Iran, Islamische Republik"
-    },
+    "IR": { "en": "Iran", "de": "Iran" },
     "IS": { "en": "Iceland", "de": "Island" },
     "IT": { "en": "Italy", "de": "Italien" },
     "JE": { "en": "Jersey", "de": "Jersey (Kanalinsel)" },
@@ -153,8 +151,8 @@
     "KM": { "en": "Comoros", "de": "Komoren" },
     "KN": { "en": "Saint Kitts and Nevis", "de": "St. Kitts und Nevis" },
     "KP": {
-      "en": "Korea (Democratic People's Republic of)",
-      "de": "Korea, Demokratische Volksrepublik (Nordkorea)"
+      "en": "North Korea",
+      "de": "Nordkorea"
     },
     "KR": { "en": "Korea, Republic of", "de": "Korea, Republik (Südkorea)" },
     "KW": { "en": "Kuwait", "de": "Kuwait" },
@@ -226,7 +224,7 @@
     },
     "PN": { "en": "Pitcairn", "de": "Pitcairninseln" },
     "PR": { "en": "Puerto Rico", "de": "Puerto Rico" },
-    "PS": { "en": "Palestine, State of", "de": "Staat Palästina[6]" },
+    "PS": { "en": "Palestine", "de": "Palästina" },
     "PT": { "en": "Portugal", "de": "Portugal" },
     "PW": { "en": "Palau", "de": "Palau" },
     "PY": { "en": "Paraguay", "de": "Paraguay" },
@@ -281,8 +279,8 @@
     "TT": { "en": "Trinidad and Tobago", "de": "Trinidad und Tobago" },
     "TV": { "en": "Tuvalu", "de": "Tuvalu" },
     "TW": {
-      "en": "Taiwan, Province of China[a]",
-      "de": "Republik China (Taiwan)"
+      "en": "Taiwan",
+      "de": "Taiwan"
     },
     "TZ": {
       "en": "Tanzania, United Republic of",
@@ -305,9 +303,9 @@
       "en": "Saint Vincent and the Grenadines",
       "de": "St. Vincent und die Grenadinen"
     },
-    "VE": { "en": "Venezuela (Bolivarian Republic of)", "de": "Venezuela" },
+    "VE": { "en": "Venezuela", "de": "Venezuela" },
     "VG": {
-      "en": "Virgin Islands (British)",
+      "en": "Virgin Islands",
       "de": "Britische Jungferninseln"
     },
     "VI": {
@@ -318,6 +316,7 @@
     "VU": { "en": "Vanuatu", "de": "Vanuatu" },
     "WF": { "en": "Wallis and Futuna", "de": "Wallis und Futuna" },
     "WS": { "en": "Samoa", "de": "Samoa" },
+    "XK": { "en": "Kosovo", "de": "Kosovo" },
     "YE": { "en": "Yemen", "de": "Jemen" },
     "YT": { "en": "Mayotte", "de": "Mayotte" },
     "ZA": { "en": "South Africa", "de": "Südafrika" },
