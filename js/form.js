@@ -269,12 +269,20 @@ function setupBirthday(limits) {
 function isValid(element, value) {
   switch (element) {
     case "nickname":
+      let numberSpecialCharacters = 0
+      let nameWithoutSpecialCharacters = ''
+
+      for (let i = 0; i < value.length; i++) {
+        if (/[^a-zA-Z0-9\u00c0-\u017e\u0400-\u04FF ]/.test(value[i])) numberSpecialCharacters++
+        else nameWithoutSpecialCharacters += value[i]
+      }
+
       return (
         value.length >= 1 &&
         value.length <= 80 &&
-        /^([A-Za-z0-9 ]*[A-Za-z0-9][A-Za-z0-9 ]*[^A-Za-z0-9 ]?[A-Za-z0-9 ]*[^A-Za-z0-9 ]?[A-Za-z0-9 ]*|[A-Za-z0-9 ]*[^A-Za-z0-9 ]?[A-Za-z0-9 ]*[A-Za-z0-9][A-Za-z0-9 ]*[^A-Za-z0-9 ]?[A-Za-z0-9 ]*|[A-Za-z0-9 ]*[^A-Za-z0-9 ]?[A-Za-z0-9 ]*[^A-Za-z0-9 ]?[A-Za-z0-9 ]*[A-Za-z0-9][A-Za-z0-9 ]*)$/.test(
-          value
-        )
+        value.trim() === value &&
+        numberSpecialCharacters <= 2 &&
+        /^[a-zA-Z0-9\u00c0-\u017e\u0400-\u04FF ]+$/.test(nameWithoutSpecialCharacters)
       );
     case "first_name":
     case "last_name":
