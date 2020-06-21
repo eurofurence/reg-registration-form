@@ -6,13 +6,13 @@
   "angular-cli": {},
   "private": true,
   "dependencies": {
-    "@babel/polyfill": "^7.7.0",
+    "@babel/polyfill": "^7.10.1",
     "fetch-polyfill": "^0.8.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.5",
-    "@babel/core": "^7.7.5",
-    "@babel/preset-env": "^7.7.6"
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.1",
+    "@babel/preset-env": "^7.10.2"
   },
   "babel": {
     "presets": [
