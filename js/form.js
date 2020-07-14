@@ -1,5 +1,3 @@
-const { isValidNickname, isValidCity, isValidStreet, isValidZip, isValidState, isValidCountry, isValidEmail, isValidRepeatedEmail, isValidPhoneNumber, isValidBirthday, isValidTelegram } = require("./validators");
-
 document.addEventListener("click", evt => {
   const target = evt.target;
 

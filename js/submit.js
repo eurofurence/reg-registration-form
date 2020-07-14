@@ -1,5 +1,3 @@
-const { isValidNickname, isValidCity, isValidState, isValidStreet, isValidZip, isValidCountry, isValidEmail, isValidRepeatedEmail, isValidPhoneNumber, isValidBirthday, isValidTelegram } = require("./validators");
-
 document.addEventListener("DOMContentLoaded", async () => {
   const configResponse = await fetch("./config.json");
   const config = await configResponse.json();
