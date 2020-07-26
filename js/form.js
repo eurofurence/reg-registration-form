@@ -269,36 +269,30 @@ function setupBirthday(limits) {
 function isValid(element, value) {
   switch (element) {
     case "nickname":
-      return (
-        value.length >= 1 &&
-        value.length <= 80 &&
-        /^([A-Za-z0-9 ]*[A-Za-z0-9][A-Za-z0-9 ]*[^A-Za-z0-9 ]?[A-Za-z0-9 ]*[^A-Za-z0-9 ]?[A-Za-z0-9 ]*|[A-Za-z0-9 ]*[^A-Za-z0-9 ]?[A-Za-z0-9 ]*[A-Za-z0-9][A-Za-z0-9 ]*[^A-Za-z0-9 ]?[A-Za-z0-9 ]*|[A-Za-z0-9 ]*[^A-Za-z0-9 ]?[A-Za-z0-9 ]*[^A-Za-z0-9 ]?[A-Za-z0-9 ]*[A-Za-z0-9][A-Za-z0-9 ]*)$/.test(
-          value
-        )
-      );
+      return isValidNickname(value)
     case "first_name":
     case "last_name":
     case "city":
-      return value.length >= 1 && value.length <= 80;
+      return isValidCity(value)
     case "street":
-      return value.length >= 1 && value.length <= 120;
+      return isValidStreet(value)
     case "zip":
-      return value.length >= 1 && value.length <= 20;
+      return isValidZip(value)
     case "state":
-      return value.length >= 0 && value.length <= 80;
+      return isValidState(value)
     case "country":
     case "country_badge":
-      return value !== "none";
+      return isValidCountry(value)
     case "email":
-      return value.length >= 1 && value.length <= 200 && /^[^@\s]+@[^@\s]+$/.test(value);
+      return isValidEmail(value)
     case "email_repeat":
-      return value.length >= 1 && value.length <= 200 && value === document.querySelector('[data-field="email"]').value;
+      return isValidRepeatedEmail(value)
     case "phone":
-      return value.length >= 1 && value.length <= 32;
+      return isValidPhoneNumber(value)
     case "birthday":
-      return /^\d{4}-([0]\d|1[0-2])-([0-2]\d|3[01])$/.test(value);
+      return isValidBirthday(value)
     case "telegram":
-      return !value.length || value.charAt(0) === "@";
+      return isValidTelegram(value)
   }
 
   return true;
