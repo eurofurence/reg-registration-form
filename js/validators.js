@@ -69,7 +69,9 @@ function isValidPhoneNumber(value) {
 }
 
 function isValidBirthday(value) {
-  return /^\d{4}-([0]\d|1[0-2])-([0-2]\d|3[01])$/.test(value)
+  const parsedDate = new Date(value)
+
+  return !isNaN(parsedDate.getDate()) && (parsedDate < Date.now())
 }
 
 function isValidTelegram(value) {
