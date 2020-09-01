@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 async function loadTime(config) {
   const countdown = document.getElementById("countdown");
+  const countdownBerlinTz = document.getElementById("countdown-berlin-tz")
   const longText = document.getElementById("countdown-text-long");
   const shortText = document.getElementById("countdown-text-short");
   const error = document.getElementById("countdown-error");
@@ -64,21 +65,27 @@ async function loadTime(config) {
       activateButton();
     } else {
       const useRelative = endTime - now < 3600000;
-
-      let timeString = new Date(time.targetTime).toLocaleDateString("en-GB", {
+      const targetTime = new Date(time.targetTime)
+      const timeFormat = {
         weekday: "long",
         year: "numeric",
         month: "long",
         day: "numeric",
         hour: "2-digit",
         minute: "2-digit"
-      });
+      }
+
+      let timeString = targetTime.toLocaleDateString("en-GB", timeFormat);
+      const berlinTimeString = targetTime.toLocaleDateString("en-GB", { ...timeFormat, timeZone: 'Europe/Berlin', timeZoneName: 'short' });
 
       if (useRelative) {
         timeString = formatRemaining(endTime - now);
+        countdownBerlinTz.classList.add("hidden");
         longText.classList.add("hidden");
         shortText.classList.remove("hidden");
       } else {
+        countdownBerlinTz.textContent = `(${berlinTimeString})`;
+        countdownBerlinTz.classList.remove("hidden");
         longText.classList.remove("hidden");
         shortText.classList.add("hidden");
       }
