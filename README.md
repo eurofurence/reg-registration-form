@@ -2,7 +2,57 @@
 
 This is a statically hostable app for registering for Eurofurence. It allows the user to enter required personal details and issue a request to the registration server.
 
-## Setup
+## Development
+
+You can deploy and run all required components on your local system.
+
+### Backend
+
+The static web application needs the attendee service running as a backend. It comes with a built in in-memory database
+and can be configured to send CORS headers allowing you to access it locally without having to install a full web server.
+
+* install [golang](https://golang.org/)
+    * please use a current version, run `go version` to see what version you have
+    * the minimum required version is specified in [go.mod](https://github.com/eurofurence/reg-attendee-service/blob/master/go.mod)
+* clone [eurofurence/reg-attendee-service](https://github.com/eurofurence/reg-attendee-service.git) to a directory 
+  outside your GOPATH.
+* open a shell inside this directory
+* copy `docs/config-template.yaml` to `./config.yaml`
+* edit `config.yaml`
+    * change `security.disable_cors` from `false` to `true` to enable sending CORS allow headers
+    * comment out the line setting `security.fixed.reg` by placing a `#` in front of it, that is,
+      ```
+        # reg: 'optionally_put_secure_random_string_here_for_securing_initial_reg'
+      ```
+    * the only other setting you should need to touch is the go-live time, set in `start_iso_datetime`. This is 
+      the time at which public registration becomes available. Use this setting to test the countdown feature.
+      If you use the automated UI tests, this setting will need to match up with the value used in the tests.
+* compile the backend using `go build main.go`
+* start the backend using `./main -config config.yaml`
+
+### This Frontend
+
+Once [node.js](https://nodejs.org/en/download/) (and thus npm) is installed and in your path (please use a current version),
+you should be able to use `npm install` to obtain the dependencies and then `./babel.sh` to transpile the javascript code to be compatible
+with older browsers.
+
+Now you need some web server to serve the static files in this directory and below.
+
+If you are using JetBrains WebStorm, just use the built-in web server, open index.html and click open in browser.
+
+### Automated UI Tests
+
+With node.js already installed, here is how you can run the automated UI tests.
+
+* clone [eurofurence/reg-registration-form-uitest.git](https://github.com/eurofurence/reg-registration-form-uitest.git)
+* run `npm install`, this will install testcafe in the local directory
+* you may need to edit the URL to your local installation and the go-live time at the top of `src/main.js`. There
+  are some comments helping you with converting the time zones.
+* run `node node_modules/testcafe/bin/testcafe.js firefox src/main.js` on the command line to execute the full test suite.
+
+Note: the README.md contains instructions on how to run the tests using JetBrains WebStorm.
+
+## Configuration
 
 Since this is a static webpage, you can just copy and paste the contents of this directory to any webserver. You might want to configure certain files to your needs. Here is how to do the most common tasks:
 
