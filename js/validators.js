@@ -53,7 +53,7 @@ function isValidState(value) {
 }
 
 function isValidCountry(value) {
-  return value !== "none"
+  return value !== "none" && value !== "XX"
 }
 
 function isValidEmail(value) {
