@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 async function loadTime(config) {
   const countdown = document.getElementById("countdown");
-  const countdownBerlinTz = document.getElementById("countdown-berlin-tz")
+  const countdownBerlinTz = document.getElementById("countdown-berlin-tz");
   const longText = document.getElementById("countdown-text-long");
   const shortText = document.getElementById("countdown-text-short");
   const error = document.getElementById("countdown-error");
