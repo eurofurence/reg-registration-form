@@ -223,7 +223,14 @@ function setupSubmitButton(timeServer, endpoint) {
                   .pop()
           );
         } else {
-          showServerError(await response.json());
+          const err = await response.json();
+
+          if (err.message === "attendee.data.duplicate") {
+            showError("DUPLICATE");
+          } else {
+            showServerError(err);
+          }
+
           btn.removeAttribute("disabled");
         }
       } catch (e) {

@@ -79,6 +79,7 @@
   "ERROR_TIMESERVER": "Zeitserver nicht erreichbar!",
   "ERROR_COUNTDOWN": "Submission of Registration is not yet available",
   "ERROR_INVALID": "Your entered registration data is invalid. Please go back and correct it.",
+  "ERROR_DUPLICATE": "An attendee with the same nickname, email and zip code has already registered!",
   "ERROR_UNKNOWN": "An unknown error occured. Please try again.",
   "LEGAL_NOTICE": "Legal Notice: ",
   "LEGAL_NOTICE_TEXT": "By submitting your registration you ask Eurofurence e.V. to offer you a place at EF. The actual contract offer is made when we accept your registration and e-mail you the payment details, which you can then accept by sending your payment.",
