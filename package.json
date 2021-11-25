@@ -6,7 +6,7 @@
   "angular-cli": {},
   "private": true,
   "dependencies": {
-    "@babel/polyfill": "^7.10.1",
+    "@babel/polyfill": "^7.12.1",
     "fetch-polyfill": "^0.8.2"
   },
   "devDependencies": {
