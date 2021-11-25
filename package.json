@@ -10,7 +10,7 @@
     "fetch-polyfill": "^0.8.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.1",
+    "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.10.2"
   },
