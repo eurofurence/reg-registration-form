@@ -69,9 +69,17 @@ function isValidPhoneNumber(value) {
 }
 
 function isValidBirthday(value) {
-  const parsedDate = new Date(value)
+  // we first need to ensure the date value is in ISO date format yyyy-mm-dd (because the backend API expects that)
+  // note: if the user is on a modern browser, the date picker will ensure this, but there are oddball browsers that allow typing
+  if (/^\d{4}-([0]\d|1[0-2])-([0-2]\d|3[01])$/.test(value)) {
+    // now ensure valid date and not in the future
+    const parsedDate = new Date(value)
+    return !isNaN(parsedDate.getDate()) && (parsedDate < Date.now())
+  }
+}
 
-  return !isNaN(parsedDate.getDate()) && (parsedDate < Date.now())
+function isValidBirthdayWithLimits(value, oldest, youngest) {
+  return isValidBirthday(value) && (value >= oldest) && (value <= youngest)
 }
 
 function isValidTelegram(value) {
