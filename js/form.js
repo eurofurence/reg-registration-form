@@ -290,7 +290,10 @@ function isValid(element, value) {
     case "phone":
       return isValidPhoneNumber(value)
     case "birthday":
-      return isValidBirthday(value)
+      const field = document.querySelector('[data-field="birthday"]');
+      const oldest = field.getAttribute("min");
+      const youngest = field.getAttribute("max");
+      return isValidBirthdayWithLimits(value, oldest, youngest)
     case "telegram":
       return isValidTelegram(value)
   }
