@@ -324,7 +324,7 @@
     "ZW": { "en": "Zimbabwe", "de": "Simbabwe" }
   },
   "birthdayLimits": {
-    "youngest": "2002-08-19",
+    "youngest": "2004-08-24",
     "oldest": "1901-01-01"
   },
   "timeServer": "http://localhost:9091/api/rest/v1/countdown",
@@ -371,31 +371,31 @@
     {
       "en": {
         "label": "Early Bird",
-        "description": "before 1st of February"
+        "description": "before 1st of April"
       },
       "de": {
         "label": "Frühbucher",
-        "description": "bis vor dem 1. Februar"
-      }
-    },
-    {
-      "en": {
-        "label": "Regular",
-        "description": "until before 1st of April"
-      },
-      "de": {
-        "label": "Normal",
         "description": "bis vor dem 1. April"
       }
     },
     {
       "en": {
+        "label": "Regular",
+        "description": "until before 1st of June"
+      },
+      "de": {
+        "label": "Normal",
+        "description": "bis vor dem 1. Juni"
+      }
+    },
+    {
+      "en": {
         "label": "Late",
-        "description": "after 1st of April"
+        "description": "after 1st of June"
       },
       "de": {
         "label": "Spätbucher",
-        "description": "nach 1. April"
+        "description": "nach 1. Juni"
       }
     }
   ],
@@ -404,7 +404,7 @@
       "code": "attendance",
       "default": true,
       "required": true,
-      "price": ["90€", "100€", "125€"],
+      "price": ["95€", "110€", "135€"],
       "en": {
         "label": "Entrance Fee",
         "description": "The Convention Ticket entitles you to attend the convention from Wednesday to Sunday. It includes a con badge, a program book, and the right to take part in all scheduled events except sponsor-only events (which require an additional sponsor or super-sponsor upgrade), some charity events (which may require a donation to the charity), and the stage track (which requires the additional Stage Ticket).<br/><br/>Hotel rooms at the reduced convention rate are only available to holders of a Convention Ticket, but are NOT included in it."
