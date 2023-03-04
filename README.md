@@ -1,3 +1,7 @@
+# Deprecation Notice
+
+ARCHIVED - superseded by [reg-frontend](https://github.com/eurofurence/reg-frontend)
+
 # Eurofurence Registration App
 
 This is a statically hostable app for registering for Eurofurence. It allows the user to enter required personal details and issue a request to the registration server.
